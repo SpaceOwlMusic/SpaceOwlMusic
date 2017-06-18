@@ -1,0 +1,393 @@
+-- -- # -- Table: users
+-- -- # CREATE TABLE users (
+-- -- #   id       INT          NOT NULL AUTO_INCREMENT PRIMARY KEY,
+-- -- #   username VARCHAR(255) NOT NULL,
+-- -- #   password VARCHAR(255) NOT NULL
+-- -- # )
+-- -- #   ENGINE = InnoDB;
+-- -- #
+-- -- # -- Table: roles
+-- -- # CREATE TABLE roles (
+-- -- #   id   INT          NOT NULL AUTO_INCREMENT PRIMARY KEY,
+-- -- #   name VARCHAR(100) NOT NULL
+-- -- # )
+-- -- #   ENGINE = InnoDB;
+-- -- #
+-- -- # -- Table for mapping user and roles: user_roles
+-- -- # CREATE TABLE user_roles (
+-- -- #   user_id INT NOT NULL,
+-- -- #   role_id INT NOT NULL,
+-- -- #
+-- -- #   FOREIGN KEY (user_id) REFERENCES users (id),
+-- -- #   FOREIGN KEY (role_id) REFERENCES roles (id),
+-- -- #
+-- -- #   UNIQUE (user_id, role_id)
+-- -- # )
+-- -- #   ENGINE = InnoDB;
+-- -- #
+-- -- # -- Insert data
+-- -- #
+-- -- # INSERT INTO users VALUES (1, 'proselyte', '$2a$11$uSXS6rLJ91WjgOHhEGDx..VGs7MkKZV68Lv5r1uwFu7HgtRn3dcXG');
+-- -- #
+-- -- # INSERT INTO roles VALUES (1, 'ROLE_USER');
+-- -- # INSERT INTO roles VALUES (2, 'ROLE_ADMIN');
+-- -- #
+-- -- # INSERT INTO user_roles VALUES (1, 2);
+-- --
+-- -- # /------------------------------------------------------------------------
+-- --
+-- -- # -- Table: Message
+-- -- # CREATE TABLE message (
+-- -- #   id       INT          NOT NULL AUTO_INCREMENT PRIMARY KEY,
+-- -- #   id_sender INT NOT NULL,
+-- -- #   message VARCHAR(255) NOT NULL,
+-- -- #   sex_message INT NOT NULL,
+-- -- #   FOREIGN KEY (sex_message) REFERENCES sex(id)
+-- -- # );
+-- -- #
+-- -- #
+-- -- # INSERT INTO message VALUES (1, 2, 'test1',1);
+-- -- # INSERT INTO message VALUES (2, 3, 'test2',1);
+-- -- # INSERT INTO message VALUES (3, 2, 'test3',2);
+-- -- # INSERT INTO message VALUES (4, 3, 'test4',2);
+-- --
+-- --
+-- -- # DROP TABLE message;
+-- --
+-- --
+-- -- # CREATE TABLE sex(
+-- -- #   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+-- -- #   sex VARCHAR(255) NOT NULL
+-- -- # );
+-- --
+-- -- #  INSERT INTO sex VALUES (1, 'man');
+-- -- #  INSERT INTO sex VALUES (2, 'woman');
+-- --
+-- -- #_--------------------------------------------DIALOG_USERS---------------------------------------------------------
+-- --
+-- --
+-- -- # CREATE TABLE dialog (
+-- -- #    id_dialog    INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+-- -- #    user_first    INT NOT NULL,
+-- -- #    user_second INT NOT NULL,
+-- -- #     FOREIGN KEY (user_first) REFERENCES users (id),
+-- -- #     FOREIGN KEY (user_second) REFERENCES users (id)
+-- -- #
+-- -- # );
+-- -- # INSERT INTO dialog  VALUES (1, 1,2);
+-- -- # INSERT INTO dialog  VALUES (2, 2,3);
+-- -- # INSERT INTO dialog  VALUES (3, 3,1);
+-- -- #
+-- -- #-------------------------------------------MESSAGE_FOR_DIALOG______________________________________
+-- --
+-- -- # CREATE TABLE message (
+-- -- #   id        INT          NOT NULL AUTO_INCREMENT PRIMARY KEY,
+-- -- #   id_dialog INT NOT NULL,
+-- -- #   id_sender INT          NOT NULL,
+-- -- #   msg       VARCHAR(200) NOT NULL,
+-- -- #   FOREIGN KEY (id_sender) REFERENCES users (id),
+-- -- #   FOREIGN KEY (id_dialog) REFERENCES dialog (id)
+-- -- # );
+-- --
+-- -- /*INSERT INTO message VALUES (1,1, 1, 'hello bob');
+-- -- INSERT INTO message VALUES (2,1, 2, 'hy nick');
+-- -- INSERT INTO message VALUES (3,1, 1,'sdasdsad');
+-- -- INSERT INTO message VALUES (4,1, 2, 'helddfdfdfdlo');
+-- -- INSERT INTO message VALUES (5,1, 1,'dsdsds');
+-- --
+-- -- INSERT INTO message VALUES (6,2, 1, 'hello3333 bob');
+-- -- INSERT INTO message VALUES (7,2, 3, 'hy 33333nick');
+-- -- INSERT INTO message VALUES (8,2, 1, 'sdasd333sad');
+-- -- INSERT INTO message VALUES (9,2, 3, 'heldd33333fdfdfdlo');
+-- -- INSERT INTO message VALUES (10,2, 1, 'dsd33333sds');
+-- --
+-- --
+-- -- INSERT INTO message VALUES (11,3, 2,'2444 bob');
+-- -- INSERT INTO message VALUES (12,3, 3, 'hy sdsf33333nick');
+-- -- INSERT INTO message VALUES (13,3, 2, 'sdsdfdsasd333sad');
+-- -- INSERT INTO message VALUES (14,3, 3, 'hesdfsldd33333fdfdfdlo');
+-- -- INSERT INTO message VALUES (15,3, 2,'dsdwsffd33333sds');*/
+-- --
+-- --
+-- --
+-- --
+-- -- # CREATE TABLE user_dialogs (
+-- -- #     dialog_id INT NOT NULL,
+-- -- #     message_id INT NOT NULL,
+-- -- #
+-- -- #     FOREIGN KEY (dialog_id) REFERENCES dialog (id),
+-- -- #     FOREIGN KEY (message_id) REFERENCES message (id)
+-- -- #
+-- -- # #     UNIQUE (user_id, role_id)
+-- -- #
+-- -- # );
+-- --
+-- -- # INSERT INTO user_dialogs VALUES (1, 1);
+-- -- # INSERT INTO user_dialogs VALUES (1, 2);
+-- -- # INSERT INTO user_dialogs VALUES (1, 3);
+-- -- # INSERT INTO user_dialogs VALUES (1, 4);
+-- -- # INSERT INTO user_dialogs VALUES (1, 5);
+-- -- #
+-- -- # INSERT INTO user_dialogs VALUES (2, 6);
+-- -- # INSERT INTO user_dialogs VALUES (2, 7);
+-- -- # INSERT INTO user_dialogs VALUES (2, 8);
+-- -- # INSERT INTO user_dialogs VALUES (2, 9);
+-- -- # INSERT INTO user_dialogs VALUES (2, 10);
+-- -- #
+-- -- # INSERT INTO user_dialogs VALUES (3, 11);
+-- -- # INSERT INTO user_dialogs VALUES (3, 12);
+-- -- # INSERT INTO user_dialogs VALUES (3, 13);
+-- -- # INSERT INTO user_dialogs VALUES (3, 14);
+-- -- # INSERT INTO user_dialogs VALUES (3, 25);
+-- --
+-- --
+-- -- #----------Add column ID_PROFILE into table USERS
+-- -- #   ALTER TABLE `soundapp`.`users`
+-- -- #   ADD COLUMN `id_profile` INT NULL AFTER `password`,
+-- -- #   ADD UNIQUE INDEX `id_profile_UNIQUE` (`id_profile` ASC);
+-- --
+-- -- #----------Add table PROFILE
+-- -- # CREATE TABLE `profile` (
+-- -- #   `id` int(11) NOT NULL AUTO_INCREMENT,
+-- -- #   `first_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+-- -- #   `second_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+-- -- #   `third_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+-- -- #   `date_of_birthday` date DEFAULT NULL,
+-- -- #   `Adress` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+-- -- #   `phone` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+-- -- #   `description` text COLLATE utf8_unicode_ci,
+-- -- #   `image_path` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+-- -- #   `status` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+-- -- #   PRIMARY KEY (`id`)
+-- -- # ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+-- --
+-- -- #
+-- -- #
+-- -- #
+-- -- # #----------Add foreign key into USERS
+-- -- # Alter table users
+-- -- #  add foreign key(id_profile) references profile(ID);
+-- --
+-- -- #----------Insert test row into Profile
+-- -- INSERT INTO `soundapp`.`profile`
+-- -- (id,`first_name`,
+-- -- `second_name`,
+-- -- `third_name`,
+-- -- `date_of_birthday`,
+-- -- `Adress`,
+-- -- `phone`,
+-- -- `description`,
+-- -- 'image_path',
+-- -- 'status')
+-- -- VALUES
+-- --  (1,'Ivan','Ivanov','Ivanovich','1968-01-01',
+-- --   1,'0880039652',
+-- --   'Some description about User','some_path','some status');
+-- --
+-- -- #------------Update user "proselyte"(add foreign key to Profile row)
+-- -- # UPDATE `soundapp`.`users`
+-- -- # SET
+-- -- #  `id_profile` = 1
+-- -- # WHERE `id` = 1;
+-- --
+-- -- # # ----------Table Addreess extends Profile
+-- -- # Create table Address
+-- -- # (
+-- -- #   ID int not null auto_increment primary key,
+-- -- #   country varchar(255) not null,
+-- -- #   region varchar(255) null,
+-- -- #   sity varchar(255) null,
+-- -- #   street varchar(255) null,
+-- -- #   plain varchar(255) null
+-- -- # );
+-- -- #
+-- -- # # ---------update Profile table and row
+-- -- #
+-- -- # UPDATE `soundapp`.`profile`
+-- -- # SET
+-- -- #   `Adress` = NULL
+-- -- # WHERE `id` = 1;
+-- -- #
+-- -- # ALTER TABLE `soundapp`.`profile`
+-- -- #   CHANGE COLUMN `Adress` `Adress` INT NULL DEFAULT NULL ,
+-- -- #   ADD UNIQUE INDEX `Adress_UNIQUE` (`Adress` ASC);
+-- -- #
+-- -- # #
+-- -- # /*alter table profile
+-- -- #   add foreign key(Adress) references address(id);*/
+-- -- #
+-- -- # # ------- insert row into Address
+-- -- # INSERT INTO `soundapp`.`address`
+-- -- # (
+-- -- #   `country`,
+-- -- #   `region`,
+-- -- #   `sity`,
+-- -- #   `street`,
+-- -- #   `plain`)
+-- -- # VALUES
+-- -- #   (
+-- -- #     'Ukrain',
+-- -- #     'Odessa region',
+-- -- #     'Odessa',
+-- -- #     'Some street, 25',
+-- -- #     'Some plain, like 35');
+-- -- # # --------add foreign key into profile
+-- -- # UPDATE `soundapp`.`profile`
+-- -- # SET
+-- -- #   `Adress` = 1
+-- -- # WHERE `id` = 1;
+-- -- # #-------------add sex column into Profile
+-- -- # ALTER TABLE `soundapp`.`profile`
+-- -- #   ADD COLUMN `sex` SET('male', 'female') NULL AFTER `status`;
+-- -- # ---------------add change to row
+-- -- # UPDATE `soundapp`.`profile`
+-- -- # SET
+-- -- #   `sex` = 'male'
+-- -- # WHERE `id` = 1;
+-- #############################################SOUND########################################################
+-- --
+-- -- # CREATE TABLE mapped_sound (
+-- -- #   id       INT          NOT NULL AUTO_INCREMENT PRIMARY KEY,
+-- -- #   path VARCHAR(500) NOT NULL
+-- -- #  )
+-- --
+-- --    # створити папку дна диску , кинути туди 3 аудіо , та вказати їх шлях  в поточну таблицю
+-- --
+-- --
+-- --
+-- -- # CREATE TABLE sound (
+-- -- #   id             INT          NOT NULL AUTO_INCREMENT PRIMARY KEY,
+-- -- #   name           VARCHAR(255) NOT NULL,
+-- -- #   id_mapped_sound INT          NOT NULL,
+-- -- #   FOREIGN KEY (id_mapped_sound) REFERENCES mapped_sound (id)
+-- -- #
+-- -- # );
+-- -- #
+-- -- #
+-- -- #
+-- -- # INSERT INTO sound VALUES (1,'test sound 1', 1);
+-- -- # INSERT INTO sound VALUES (2,'test sound 2', 2);
+-- -- # INSERT INTO sound VALUES (3,'test sound 3', 3);
+-- --
+-- --
+-- --
+-- -- # CREATE TABLE user_sounds (
+-- -- #   id             INT          NOT NULL AUTO_INCREMENT PRIMARY KEY,
+-- -- #   id_sound INT NOT NULL ,
+-- -- #   id_profile INT NOT NULL ,
+-- -- #   FOREIGN KEY (id_sound) REFERENCES sound (id),
+-- -- #   FOREIGN KEY (id_profile) REFERENCES sound (id)
+-- -- #
+-- -- # );
+-- -- # INSERT INTO user_sounds VALUES (1,1, 2);
+-- -- # INSERT INTO user_sounds VALUES (2,2, 2);
+-- -- # INSERT INTO user_sounds VALUES (3,3, 2);
+-- --
+-- --
+-- --
+--
+--
+--
+--
+-- ###########################################
+--
+--
+-- # CREATE TABLE `sound` (
+-- #   `ID` int(11) NOT NULL AUTO_INCREMENT,
+-- #   `url` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+-- #   PRIMARY KEY (`ID`)
+-- # ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+-- #
+-- #
+-- # CREATE TABLE `sound_meta` (
+-- #   `id` int(11) NOT NULL AUTO_INCREMENT,
+-- #   `id_sound` int(11) NOT NULL,
+-- #   `name` varchar(60) COLLATE utf8_unicode_ci DEFAULT NULL,
+-- #   `author` varchar(60) COLLATE utf8_unicode_ci DEFAULT NULL,
+-- #   `album` varchar(60) COLLATE utf8_unicode_ci DEFAULT NULL,
+-- #   `year` int(11) DEFAULT NULL,
+-- #   `comment` varchar(60) COLLATE utf8_unicode_ci DEFAULT NULL,
+-- #   `genre` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+-- #   PRIMARY KEY (`id`),
+-- #   KEY `id_sound` (`id_sound`),
+-- #   CONSTRAINT `sound_meta_ibfk_1` FOREIGN KEY (`id_sound`) REFERENCES `sound` (`ID`)
+-- # ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+-- #
+-- # CREATE TABLE `playlist` (
+-- #   `ID` int(11) NOT NULL AUTO_INCREMENT,
+-- #   `id_user` int(11) NOT NULL,
+-- #   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+-- #   PRIMARY KEY (`ID`)
+-- # ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+-- #
+-- # CREATE TABLE `playlist_sound` (
+-- #   `playlist_id` int(11) NOT NULL,
+-- #   `sound_id` int(11) NOT NULL,
+-- #   PRIMARY KEY (`playlist_id`,`sound_id`)
+-- # ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;*/
+-- #
+-- #
+-- # alter table sound_meta add foreign key(id_sound) references sound(id);
+-- # alter table Playlist add foreign key(id_user) references users(id);
+-- # alter table playlist_sound add foreign key(id_playlist) references Playlist(id);
+-- # alter table playlist_sound add foreign key(id_sound) references sound(id);
+-- INSERT INTO `soundapp`.`playlist`
+-- (`ID`,
+-- `id_user`,
+-- `name`)
+-- VALUES
+-- (1,
+-- 1,
+-- "test");
+-- INSERT INTO `soundapp`.`playlist`
+-- (`ID`,
+-- `id_user`,
+-- `name`)
+-- VALUES
+-- (2,
+-- 1,
+-- "test2");
+-- INSERT INTO `soundapp`.`sound`
+-- (`ID`,
+-- `url`)
+-- VALUES
+-- (1,
+-- "path1");
+--
+-- INSERT INTO `soundapp`.`sound`
+-- (`ID`,
+-- `url`)
+-- VALUES
+-- (2,
+-- "path2");
+-- INSERT INTO `soundapp`.`playlist_sound`
+-- (`playlist_id`,
+-- `sound_id`)
+-- VALUES
+-- (1,
+-- 1);
+-- INSERT INTO `soundapp`.`playlist_sound`
+-- (`playlist_id`,
+-- `sound_id`)
+-- VALUES
+-- (1,
+-- 2);
+-- INSERT INTO `soundapp`.`playlist_sound`
+-- (`playlist_id`,
+-- `sound_id`)
+-- VALUES
+-- (2,
+-- 2);
+--
+--
+
+
+CREATE TABLE playlists_sound (
+  playlist_id INT NOT NULL,
+  sound_id INT NOT NULL,
+
+  FOREIGN KEY (playlist_id) REFERENCES  sounds_playst(id),
+  FOREIGN KEY (sound_id) REFERENCES sound (id),
+
+  UNIQUE (playlist_id, sound_id)
+)

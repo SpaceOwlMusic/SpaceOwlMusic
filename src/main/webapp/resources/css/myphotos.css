@@ -1,0 +1,529 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Russo+One");
+* {
+  box-sizing: border-box; }
+
+html {
+  height: 100%; }
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%; }
+
+a {
+  text-decoration: none;
+  color: #000000;
+  font-family: 'Russo One', sans-serif;
+  font-size: 20px; }
+
+#pagewrap {
+  background-color: black; }
+
+#content {
+  padding-bottom: 75%; }
+
+.logoname {
+  padding-bottom: 30px; }
+  .logoname a {
+    font-size: 50px;
+    color: white; }
+  .logoname img {
+    width: 80px;
+    height: 80px; }
+  .logoname h1 {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    vertical-align: bottom; }
+
+#header nav {
+  width: 91%;
+  margin: 0 auto; }
+
+#top-nav {
+  background-color: #ffffff;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  border-radius: 10px; }
+  #top-nav a {
+    margin: 50px; }
+  #top-nav a:last-child {
+    margin-right: 0; }
+  #top-nav li {
+    display: inline-block; }
+  #top-nav img {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px; }
+  #top-nav li:last-child {
+    margin-left: 60px; }
+  #top-nav .inputtext {
+    border-radius: 8px;
+    height: 26px; }
+
+a:first-child {
+  margin-right: 0px; }
+
+a:nth-child(2) {
+  margin-left: 0px; }
+
+a:hover {
+  text-decoration: none; }
+
+.form-group .form-control {
+  width: 300px; }
+
+#ourlogo img {
+  width: 81px;
+  height: 77px;
+  border-radius: 50%; }
+
+#ourname {
+  color: #000000;
+  font-family: 'Russo One', sans-serif;
+  font-size: 50px; }
+
+.userinfo {
+  display: inline-block;
+  width: 33%;
+  margin-right: 3%;
+  background-color: #ffffff;
+  border-radius: 10px; }
+
+.profileinfo {
+  display: inline-block;
+  width: 50%;
+  vertical-align: top;
+  background-color: #ffffff;
+  height: 1000px;
+  overflow-y: hidden;
+  border-radius: 10px; }
+
+.userpage {
+  margin: 10px 30px;
+  padding: 2%; }
+
+.userfotka {
+  text-align: center;
+  margin-top: 20px; }
+
+#country {
+  width: 200px; }
+
+.panel-body label {
+  font-family: 'Russo One', sans-serif;
+  font-size: 15px; }
+.panel-body h2 {
+  font-family: 'Russo One', sans-serif;
+  font-size: 20px; }
+.panel-body .gender {
+  font-family: 'Russo One', sans-serif;
+  font-size: 15px;
+  margin: 15px; }
+
+.headernav {
+  margin-top: 20px; }
+  .headernav img {
+    width: 60px;
+    height: 60px; }
+
+input[type="submit"] {
+  background-color: #b366ff;
+  /* Green */
+  border-radius: 9px;
+  font-family: 'Russo One', sans-serif;
+  padding: 4px 10px;
+  border: 1px solid #b366ff; }
+
+input[type="submit"]:hover {
+  background-color: transparent;
+  color: black; }
+
+#genderbutton {
+  display: block;
+  margin: 15px 20px; }
+
+.infoblock {
+  display: block; }
+
+.maininfo {
+  background-color: #ffffff;
+  display: inline-block;
+  vertical-align: top;
+  border-radius: 10px;
+  width: 63%; }
+
+.nav-tabs {
+  text-align: center; }
+  .nav-tabs li {
+    float: none;
+    display: inline-block; }
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 180px; }
+
+.wallnews {
+  margin: 30px; }
+  .wallnews input {
+    width: 68%;
+    height: 100px;
+    border: 1px solid #b366ff;
+    box-shadow: 0px 0px 3px #e6ccff;
+    border-radius: 9px; }
+
+.avatar {
+  width: 80px;
+  height: 80px; }
+
+.actionwall img {
+  width: 30px;
+  height: 30px; }
+
+.userphoto {
+  display: table;
+  margin: 20px auto; }
+
+.createalbum, .addphoto, .addphoto:hover, .createplaylist, .createplaylist:hover, .addtrack {
+  color: #b366ff;
+  border-color: #b366ff;
+  display: inline-block;
+  margin: 6px;
+  font-size: 18px;
+  line-height: 1.42;
+  padding: 0.8em 2.5em;
+  font-weight: normal;
+  border-width: 3px;
+  border-style: solid;
+  background: transparent;
+  border-radius: 9px;
+  cursor: pointer;
+  font-family: тАЬBooster Next FYтАЭ, тАЬAvenir NextтАЭ, Avenir, sans-serif;
+  user-select: none;
+  vertical-align: bottom;
+  transition: background-color 0.2s, color 0.2s, padding 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-radius 0.2s; }
+
+.createalbum:hover, .addphoto:hover, .createplaylist:hover, .addtrack:hover {
+  background-color: #b366ff;
+  color: #E6EAEF;
+  padding-left: 3.5em;
+  padding-right: 3.5em;
+  border-radius: 0.4em; }
+
+.usermusic {
+  display: table;
+  margin: 20px auto; }
+
+.publish {
+  color: black;
+  font-family: 'Russo One', sans-serif;
+  border-color: #b366ff;
+  margin: 3%;
+  font-size: 15px;
+  line-height: 1.42;
+  padding: 0.8em 2.5em;
+  font-weight: normal;
+  border-width: 3px;
+  border-style: solid;
+  background: transparent;
+  border-radius: 10px; }
+
+.publish:hover {
+  background-color: #b366ff; }
+
+@media screen and (max-width: 980px) {
+  #top-nav {
+    margin-top: 20px; }
+
+  #content {
+    margin: 0; }
+    #content .userpage {
+      margin: 0;
+      padding: 0; }
+
+  .logoname a {
+    font-size: 50px; } }
+@media screen and (max-width: 650px) {
+  .userinfo {
+    height: 400px;
+    overflow: scroll;
+    overflow-x: hidden;
+    border: 1px solid black;
+    background-color: #F5F5F5; }
+    .userinfo input[type="submit"] {
+      margin-top: 10px;
+      font-size: 15px;
+      margin-bottom: 10px; }
+    .userinfo label {
+      font-size: 15px; }
+    .userinfo h2 {
+      font-size: 15px; }
+    .userinfo ul a {
+      font-size: 15px; }
+    .userinfo .panel-title a {
+      font-size: 15px; }
+
+  .maininfo {
+    width: 52%;
+    height: 400px;
+    overflow: scroll;
+    overflow-x: hidden;
+    border: 1px solid black;
+    background-color: #F5F5F5; }
+    .maininfo ul a {
+      font-size: 15px; }
+
+  .userinfo {
+    width: 42%; }
+
+  #header {
+    height: auto; }
+    #header #top-nav {
+      margin-top: 30px; }
+
+  #searchform {
+    position: absolute;
+    top: 95px;
+    right: 0; }
+
+  #top-nav {
+    position: static; }
+    #top-nav img {
+      width: 30px;
+      height: 30px; }
+    #top-nav a {
+      margin: 11px;
+      font-size: 15px; }
+
+  .logoname {
+    margin: 15px 100px 5px 0;
+    position: static; }
+    .logoname a {
+      font-size: 30px; }
+
+  #content {
+    width: auto;
+    float: none;
+    margin: 0; } }
+footer, footer p {
+  background-image: url("../img/04.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0; }
+  footer p {
+    color: white; }
+
+@media screen and (max-width: 480px) {
+  html {
+    -webkit-text-size-adjust: none; }
+
+  .userinfo {
+    width: 100%;
+    height: 500px;
+    overflow: scroll;
+    overflow-x: hidden;
+    border: 1px solid black;
+    background-color: #F5F5F5; }
+    .userinfo a {
+      font-size: 20px; }
+
+  .maininfo {
+    width: 100%;
+    height: 400px;
+    overflow: scroll;
+    overflow-x: hidden;
+    border: 1px solid black;
+    background-color: #F5F5F5; }
+    .maininfo ul a {
+      font-size: 12px; }
+    .maininfo .nav > li > a {
+      padding: 0; }
+
+  #top-nav a {
+    padding: 10px 8px;
+    margin: 5px;
+    font-size: 12px; }
+  #top-nav img {
+    width: 20px;
+    height: 20px; }
+
+  .logoname {
+    margin: 15px 100px 5px 0;
+    position: static;
+    display: inline-block; }
+    .logoname a {
+      font-size: 15px;
+      display: table-caption; }
+    .logoname img {
+      width: 50px;
+      height: 50px; } }
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); }
+
+.popup-inner {
+  width: 600px;
+  height: 300px;
+  background-color: #fff;
+  padding: 40px;
+  position: absolute;
+  top: 347px;
+  left: 550px;
+  border-radius: 9px; }
+
+.popup-close {
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  font: 20px Helvetica, sans-serif;
+  padding: 10px 15px;
+  border: 1px solid #b366ff;
+  border-radius: 50%;
+  background: #b366ff;
+  color: #fff;
+  cursor: pointer; }
+
+.selectgenre, #listname, #trackname {
+  background: none;
+  border: 2px solid #b366ff;
+  border-radius: 5px;
+  width: 42%;
+  height: 30px;
+  outline: none;
+  font-family: 'Russo One', sans-serif; }
+
+#listname, #trackname {
+  margin: 20px 0; }
+
+#addplaylist, #addmusic, #upload, #cancel, #delete {
+  background: white;
+  border-radius: 8px;
+  color: black;
+  border: 2px solid black; }
+
+#addplaylist:hover, #addmusic:hover, #upload:hover, #cancel:hover, #delete:hover {
+  background: black;
+  color: #fffffF; }
+
+.container label {
+  font-family: 'Russo One', sans-serif; }
+.container span {
+  font-family: 'Russo One', sans-serif; }
+.container h2 {
+  font-family: 'Russo One', sans-serif;
+  margin: 20px;
+  display: inline-block; }
+
+.headerlist {
+  padding: 0;
+  margin: 10px; }
+  .headerlist img {
+    vertical-align: baseline; }
+
+#main {
+  width: 300px;
+  margin: auto;
+  background: #ececec;
+  padding: 20px;
+  border: 1px solid #ccc; }
+
+#image-list {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+#image-list li {
+  background: #fff;
+  border: 1px solid #ccc;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 19px; }
+
+#image-list li img {
+  width: 258px;
+  vertical-align: middle;
+  border: 1px solid #474747; }
+
+.imgContainer {
+  border: 2px solid black;
+  background: #b366ff; }
+  .imgContainer img {
+    width: 140px;
+    height: 140px; }
+
+.userphoto .container img {
+  vertical-align: baseline; }
+
+.input-group {
+  margin-bottom: 20px; }
+  .input-group input[type="text"] {
+    font-family: 'Russo One', sans-serif; }
+  .input-group span {
+    font-family: 'Russo One', sans-serif; }
+
+.inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1; }
+
+.inputfile + label {
+  font-size: 1.25em;
+  font-weight: 700;
+  color: white;
+  background-color: black;
+  display: inline-block; }
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+  background-color: #b366ff; }
+
+.inputfile + label {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10px; }
+
+.inputfile:focus + label {
+  outline: 1px dotted #000;
+  outline: -webkit-focus-ring-color auto 5px; }
+
+button {
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 10px;
+  background-color: #b366ff;
+  border: 1px solid #b366ff;
+  font-family: 'Russo One', sans-serif; }
+
+.bar {
+  height: 18px;
+  background: green; }
+
+.tab-content {
+  overflow-y: scroll; }
+
+.formaddmusic {
+  margin-top: 20px; }
+
+#trackname {
+  width: 77%; }
+
+#addtrack h2 {
+  font-family: 'Russo One', sans-serif;
+  margin: 20px; }
+
+article {
+  font-family: 'Russo One', sans-serif; }
+
+/*# sourceMappingURL=myphotos.css.map */

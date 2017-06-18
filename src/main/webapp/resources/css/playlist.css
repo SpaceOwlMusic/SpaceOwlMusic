@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css?family=Russo+One");
+* {
+  box-sizing: border-box; }
+
+html {
+  height: 100%; }
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%; }
+
+a {
+  text-decoration: none;
+  color: #000000;
+  font-family: 'Russo One', sans-serif;
+  font-size: 20px; }
+
+#pagewrap {
+  background-color: black; }
+
+#content {
+  padding-bottom: 33%; }
+
+.logoname {
+  padding-bottom: 30px; }
+.logoname a {
+  font-size: 50px;
+  color: white; }
+.logoname img {
+  width: 80px;
+  height: 80px; }
+.logoname h1 {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  vertical-align: bottom; }
+
+#header nav {
+  width: 91%;
+  margin: 0 auto; }
+
+#top-nav {
+  background-color: #ffffff;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  border-radius: 10px; }
+#top-nav a {
+  margin: 50px; }
+#top-nav a:last-child {
+  margin-right: 0; }
+#top-nav li {
+  display: inline-block; }
+#top-nav img {
+  width: 40px;
+  height: 40px;
+  margin-right: 15px; }
+#top-nav li:last-child {
+  margin-left: 60px; }
+#top-nav .inputtext {
+  border-radius: 8px;
+  height: 26px; }
+
+a:first-child {
+  margin-right: 0px; }
+
+a:nth-child(2) {
+  margin-left: 0px; }
+
+a:hover {
+  text-decoration: none; }
+
+.form-group .form-control {
+  width: 300px; }
+
+#ourlogo img {
+  width: 81px;
+  height: 77px;
+  border-radius: 50%; }
+
+#ourname {
+  color: #000000;
+  font-family: 'Russo One', sans-serif;
+  font-size: 50px; }
+
+button {
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 10px;
+  background-color: #b366ff;
+  border: 1px solid #b366ff;
+  font-family: 'Russo One', sans-serif; }
+
+.bar {
+  height: 18px;
+  background: green; }
+
+.tab-content {
+  overflow-y: scroll; }
+
+#addtrack h2 {
+  font-family: 'Russo One', sans-serif;
+  margin: 20px;
+  text-align: center;
+  border-bottom: 1px solid #d9b3ff; }
+
+article {
+  font-family: 'Russo One', sans-serif; }
+
+#formtrackname {
+  padding: 0; }
+
+#formaddmusic {
+  margin-top: 2%;
+  text-align: center; }
+
+#baseimgtrack {
+  width: 100px;
+  height: 100px; }
+
+#baseimgplaylist {
+  width: 200px;
+  height: 150px; }
+
+.conteineraddtrack {
+  margin: 50px; }
+
+.manageplaylist {
+  margin: 20px; }
+
+.list-group-item-success {
+  background-color: #fffffF; }
+
+#nameplaylist {
+  display: flex;
+  margin: 2%;
+  border: 1px solid #fffffF;
+  border-radius: 12px;
+  padding: 3% 15% 2% 2%;
+  justify-content: flex-start;
+  background-color: rgba(0, 0, 0, 0.4); }
+#nameplaylist h2 {
+  font-family: 'Russo One', sans-serif;
+  margin: 20px;
+  color: #fffffF;
+  margin: 0; }
+
+#conteineraddtrack {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid white;
+  border-radius: 22px;
+  background-image: url("../img/space.jpg");
+  margin: 3%; }
+
+#addtracks {
+  align-self: flex-end;
+  margin: 2%; }
+
+input[type="submit"] {
+  background-color: #b366ff;
+  /* Green */
+  border-radius: 9px;
+  font-family: 'Russo One', sans-serif;
+  padding: 4px 10px;
+  border: 1px solid #b366ff; }
+
+input[type="submit"]:hover {
+  background-color: transparent;
+  color: black; }
+
+.inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1; }
+
+.inputfile + label {
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  background-color: black;
+  display: inline-block; }
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+  background-color: #b366ff; }
+
+.inputfile + label {
+  cursor: pointer;
+  padding: 7px;
+  border-radius: 10px; }
+
+.inputfile:focus + label {
+  outline: 1px dotted #000;
+  outline: -webkit-focus-ring-color auto 5px; }
+
+/*# sourceMappingURL=playlist.css.map */

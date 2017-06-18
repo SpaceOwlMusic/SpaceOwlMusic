@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css?family=Russo+One");
+*{
+  margin: 0;
+  padding: 0;
+
+}
+body{
+  background-color: black;
+}
+
+.conteiner-for-music{
+  text-align: center;
+  a{
+    text-decoration: none;
+    font-family: 'Russo One', sans-serif;
+    color:#ffffff;
+    font-size: 18px;
+  }
+  a:hover{
+    color:#991BE2;
+    border: none;
+    text-decoration: none;
+  }
+  a:focus{
+    color:#991BE2;
+    text-decoration: none;
+  }
+}
+.player{
+  display: inline-block;
+}
+.spinner-wrap{
+  display: block;
+  width: 327px;
+  height: 327px;
+}
+
+.imgtracks{
+  display: inline-block;
+  height: 151px;
+  width: 240px;
+  position: relative;
+}
+.imgtracks img  {
+  width: 100%;
+  height: 100%;
+  border-radius: 9px;
+}
+
+.imgplay{
+  height: 64px;
+  width: 64px;
+  position: absolute;
+  top: 45%;
+  left: 37%;
+  background: url('../img/Topplaylist/icon.png') no-repeat center;
+  display: none;
+
+}
+.play-sprite:hover .imgplay{
+  display: inline-block;
+  transition: 1s;
+  -moz-opacity: .6;
+  opacity: .6;
+}
+.play-sprite:hover .imgtracks{
+  -moz-opacity: .6;
+  opacity: .6;
+  transition: 1s;
+}
+article{
+  display: inline-block;
+  margin-bottom: 2%;
+}
+
+.likes {
+  display: block;
+  text-align: left;
+  font-size: 15px;
+  margin-top: 21px;
+}
+@media screen and (max-width: 1000px){
+  .imgtracks{
+    width: 200px;
+    height: 150px;
+  }
+}
+

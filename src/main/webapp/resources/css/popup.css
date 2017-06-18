@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css?family=Cantarell");
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); }
+
+.popup-close {
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  font: 20px Helvetica, sans-serif;
+  padding: 10px 15px;
+  border: 1px solid black;
+  border-radius: 50%;
+  background-color: #0940b0;
+  color: #fff;
+  cursor: pointer; }
+
+/*# sourceMappingURL=popup.css.map */

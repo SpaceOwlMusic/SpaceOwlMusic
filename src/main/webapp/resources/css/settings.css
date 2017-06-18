@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css?family=Russo+One");
+@import url("https://fonts.googleapis.com/css?family=Francois+One");
+* {
+  box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #fffffF; }
+
+#forminfochange {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 212px; }
+#forminfochange label {
+  color: #fffffF;
+  font-family: 'Francois One', sans-serif;
+  font-family: 'Francois One', sans-serif;
+  font-size: 18px; }
+
+h2 {
+  margin-bottom: 10px;
+  color: #b366ff;
+  font-family: 'Russo One', sans-serif; }
+
+input[type="radio"] {
+  color: #fffffF; }
+
+span {
+  color: #fffffF;
+  font-family: 'Russo One', sans-serif; }
+
+/*# sourceMappingURL=settings.css.map */
+Add Comment Co

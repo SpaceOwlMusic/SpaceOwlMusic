@@ -1,0 +1,498 @@
+@import url('https://fonts.googleapis.com/css?family=Francois+One');
+@import url('https://fonts.googleapis.com/css?family=Anton');
+@import url('https://fonts.googleapis.com/css?family=Russo+One');
+@import url('https://fonts.googleapis.com/css?family=Cantarell');
+body{
+	background-color: black;
+}
+a{
+	text-decoration: none;
+}
+li {
+	list-style-type: none;
+}
+header{
+	background-image:url("../img/header_background/space2.jpg");
+	background-size: cover;
+}
+.header_top{
+	h1{
+		display: inline-block;
+		font: 60px 'Russo One', sans-serif;
+		vertical-align: bottom;
+	}
+	img{
+		width: 200px;
+	}
+}
+.navbar-default{
+	background-color: #000000;
+	border-color:#000000;
+	margin: 0;
+	padding-top: 1%;
+	padding-bottom: 1%;
+.form-control{
+	background-color: transparent;
+	border-color: #991be2;
+	font: 15px 'Russo One', sans-serif;
+}
+	a{
+		font: 20px 'Russo One', sans-serif;
+	}
+	.navbar-header{
+		.navbar-brand{
+				font-size: 27px;
+				color: #ffffff;
+			img{
+				width: 90px;
+				margin: 0;
+			}
+		}
+	}
+}
+.navbar-default .navbar-nav > .active > a{
+	background-color: #991be2;
+	color:#ffffff;
+}
+.navbar-right{
+	margin-right: 1%;
+}
+#signlogin{
+	margin-right: 2%;
+	display: inline-block;
+	margin: 6px;
+	font-size: inherit;
+	line-height: 1.42;
+	padding: 0.8em 1.6em;
+	font-weight: normal;
+	border-width: 0;
+	border-style: solid;
+	background: transparent;
+	border-radius: 0.2666666667em;
+	cursor: pointer;
+	font: 15px 'Russo One', sans-serif;
+	user-select: none;
+	vertical-align: bottom;
+	transition: box-shadow 0.15s, transform 0.15s, color 0.15s;
+	background-color: #991BE2;
+	background-image: linear-gradient(0deg, #8017be, #991BE2, #a330e6);
+	color: #E6EAEF;
+	box-shadow: 0 2px 0 0 #5b1087, 0 1.31em 2em 0 rgba(255, 255, 255, 0)
+	inset, 0 2px 1px 0 rgba(255, 255, 255, 0.1) inset, 0 2px 3px 1px
+	rgba(0, 0, 0, 0.4), 0 0 12px 1px
+	rgba(153, 27, 226, 0.5), 0 2px 1px -1px transparent inset;
+}
+#signlogin:active{
+	background-color: #8a18cb;
+	background-image: linear-gradient(180deg, #7a16b4, #8d19d0);
+	color: #5b1087;
+	transition: 0s;
+	box-shadow: 0 0px 0 0 #4c0d70, 0 1.31em 1em 0
+	rgba(255, 255, 255, 0.05) inset, 0 2px 2px 0 rgba(255, 255, 255, 0)
+	inset, 0 1px 4px 0px transparent, 0 0 10px 1px rgba(153, 27, 226, 0.1), 0 2px 2px -1px rgba(0, 0, 0, 0.7)
+	inset;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+#signlogin:hover{
+	box-shadow: 0 2px 0 0 #2d6911, 0 1.31em 1em 0 rgba(255, 255, 255, 0.05) inset,
+	0 2px 1px 0 rgba(255, 255, 255, 0.15) inset, 0 2px 3px 1px rgba(0, 0, 0, 0.6), 0 0 10px 1px
+	rgba(82, 193, 31, 0.4), 0 2px 1px -1px transparent inset;
+}
+pre {
+	tab-size: 8;
+}
+@media screen and (max-width: 768px) {
+	.side-collapse-container{
+		width:100%;
+		position:relative;
+		left:0;
+		transition:left .4s;
+	}
+	.side-collapse-container.out{
+		left:200px;
+	}
+	.side-collapse {
+		top:50px;
+		bottom:0;
+		left:0;
+		width:200px;
+		position:fixed;
+		overflow:hidden;
+		transition:width .4s;
+	}
+	.side-collapse.in {
+		width:0;
+	}
+}
+//MAINSLIDER==============================================================================
+
+.modal-body{
+	background-color: #000000;
+}
+.mainslider{
+	background-color: black;
+	padding-bottom: 40px;
+}
+
+.header_logo{
+	display: flex;
+	justify-content:center;
+	align-items:center;
+	}
+.header_logoname{
+	font-family: 'Russo One', sans-serif;
+	color:white;
+	font-size: 70px;
+	}
+
+ .menu{
+	display: flex;
+	justify-content:space-around;
+
+	li{
+		// margin: 20px;
+		font-family: 'Cantarell', sans-serif;
+		padding:10px 30px;
+		border-bottom: 1px solid white;
+	li:last-child {
+			border-bottom: none;
+		}
+		a{
+			color:	  #bfbfbf;
+			font-size: 20px;
+		}
+		 a:hover{
+			color:#6e7ff3;
+			// border-bottom: 1px solid #46417e;
+			// border-top: 1px solid #46417e;
+		}
+	}
+}
+.menu_item_account{
+		background-image: linear-gradient(-225deg, #3D4E81 0%, #5753C9 48%, #6E7FF3 100%);
+		border-radius: 8px;
+	}
+	.menu_link-icon{
+img{
+	width: 20px;
+	height: 20px;
+	}
+}
+
+.header_menu{
+	margin-bottom: 80px;
+}
+#audio{
+	a:hover{
+		color: #a64dff;
+	}
+}
+
+.headeraboutus{
+		font-family: 'Russo One', sans-serif;
+		color: #ffffff;
+		font-size: 40px;
+		margin-bottom: 7%;
+		border-bottom: 1px solid #991be2;
+		text-align: center;
+	}
+
+
+.aboutus{
+	padding-bottom: 10%;
+	padding-top: 7%;
+	overflow: hidden;
+	background-image: url('../img/aboutus_background/aboutus5.jpg');
+	background-size:cover;
+	background-attachment: fixed;
+	h2{
+		font-family: 'Russo One', sans-serif;
+		color:#ffffff;
+	}
+}
+.m-y-lg{
+	font-family: 'Russo One', sans-serif;
+	font-size: 30px;
+	color:#f2f2f2;
+}
+.text-muted{
+	font-family: 'Cantarell', sans-serif;
+	font-size: 20px;
+	color: #f2f2f2;
+}
+.conteiner-for-music{
+	padding: 5%;
+	background-color: black;
+	h3{
+		font-family: 'Russo One', sans-serif;
+		color:#ffffff;
+		font-size: 40px;
+		margin-bottom: 7%;
+		border-bottom: 1px solid #991be2;
+	}
+}
+
+.aboutservice{
+	display: flex;
+	justify-content: space-around;
+}
+.img-circle {
+	img {
+		height: 82px;
+		width: 102px;
+	}
+}
+.list-top-playlist:first-child{
+	margin-top: 18%;
+}
+.aboutservice{
+	display: flex;
+	justify-content: space-around;
+}
+.img-circle {
+	img {
+		height: 82px;
+		width: 102px;
+	}
+}
+.conteiner-for-music {
+	.thumbnail {
+		background-color: transparent;
+		border: 1px solid #991be2;
+	}
+
+	.thumbnail > img{
+		width: 196px;
+		height: 130px;
+	}
+
+
+	.btn-primary{
+		font-size: inherit;
+		line-height: 1.42;
+		padding: 0.8em 1.6em;
+		font-weight: normal;
+		border-width: 0;
+		border-style: solid;
+		background: transparent;
+		border-radius: 0.2666666667em;
+		cursor: pointer;
+		font: 15px 'Russo One', sans-serif;
+		user-select: none;
+		vertical-align: bottom;
+		transition: box-shadow 0.15s, transform 0.15s, color 0.15s;
+		background-color: #991BE2;
+		background-image: linear-gradient(0deg, #8017be, #991BE2, #a330e6);
+		color: #E6EAEF;
+		box-shadow: 0 2px 0 0 #5b1087, 0 1.31em 2em 0 rgba(255, 255, 255, 0)
+		inset, 0 2px 1px 0 rgba(255, 255, 255, 0.1) inset, 0 2px 3px 1px
+		rgba(0, 0, 0, 0.4), 0 0 12px 1px
+		rgba(153, 27, 226, 0.5), 0 2px 1px -1px transparent inset;
+	}
+	.btn-primary:active{
+			background-color: #8a18cb;
+			background-image: linear-gradient(180deg, #7a16b4, #8d19d0);
+			transition: 0s;
+			box-shadow: 0 0px 0 0 #4c0d70, 0 1.31em 1em 0
+			rgba(255, 255, 255, 0.05) inset, 0 2px 2px 0 rgba(255, 255, 255, 0)
+			inset, 0 1px 4px 0px transparent, 0 0 10px 1px rgba(153, 27, 226, 0.1), 0 2px 2px -1px rgba(0, 0, 0, 0.7)
+			inset;
+			text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+		}
+		.btn-primary:hover{
+			box-shadow: 0 2px 0 0 #2d6911, 0 1.31em 1em 0 rgba(255, 255, 255, 0.05) inset,
+			0 2px 1px 0 rgba(255, 255, 255, 0.15) inset, 0 2px 3px 1px rgba(0, 0, 0, 0.6), 0 0 10px 1px
+			rgba(82, 193, 31, 0.4), 0 2px 1px -1px transparent inset;
+			color:#ffffff;
+		}
+
+	}
+
+.thumbnail .caption{
+	p{
+		color:#ffffff;
+		font: 18px 'Russo One', sans-serif;
+	}
+}
+.top-playlists{
+	margin-top:15%;
+}
+.logofooter{
+	width: 150px;
+}
+
+#myFooter {
+	color: white;
+	padding-top: 5%;
+}
+
+#myFooter .footer-copyright {
+	padding-top: 3px;
+	padding-bottom: 3px;
+	text-align: center;
+}
+
+#myFooter .row {
+	margin-bottom: 60px;
+}
+
+#myFooter .navbar-brand {
+	margin-top: 45px;
+	height: 65px;
+}
+
+#myFooter .footer-copyright p {
+	margin: 10px;
+	color: #ccc;
+}
+
+#myFooter ul {
+	list-style-type: none;
+	padding-left: 0;
+	line-height: 1.7;
+}
+
+#myFooter h5 {
+	font-size: 18px;
+	color: white;
+	font-weight: bold;
+	margin-top: 30px;
+}
+
+#myFooter h2 a{
+	font-size: 20px;
+	text-align: center;
+	color: #fff;
+}
+
+#myFooter a {
+	color: #d2d1d1;
+	text-decoration: none;
+}
+
+#myFooter a:hover,
+#myFooter a:focus {
+	text-decoration: none;
+	color: white;
+}
+
+#myFooter .social-networks {
+	text-align: center;
+	padding-top: 30px;
+	padding-bottom: 16px;
+}
+
+#myFooter .social-networks a {
+	font-size: 32px;
+	color: #f9f9f9;
+	padding: 10px;
+	transition: 0.2s;
+}
+
+#myFooter .social-networks a:hover {
+	text-decoration: none;
+}
+
+#myFooter .facebook:hover {
+	color: #0077e2;
+}
+
+#myFooter .google:hover {
+	color: #ef1a1a;
+}
+
+#myFooter .twitter:hover {
+	color: #00aced;
+}
+
+#myFooter .btn {
+	color: white;
+	background-color: #991BE2;
+	border-radius: 0.2666666667em;
+	border: none;
+	width: 150px;
+	display: block;
+	margin: 0 auto;
+	margin-top: 10px;
+	line-height: 25px;
+}
+
+@media screen and (max-width: 767px) {
+	#myFooter {
+		text-align: center;
+	}
+}
+
+.content{
+	flex: 1 0 auto;
+	-webkit-flex: 1 0 auto;
+	min-height: 200px;
+}
+
+#myFooter{
+	flex: 0 0 auto;
+	-webkit-flex: 0 0 auto;
+}
+.logofooter{
+	width: 200px;
+}
+.well-sm{
+	background-color: black;
+	color: #ffffff;
+	border: 1px solid  #991BE2;
+}
+.well{
+	background-color: black;
+	color: #ffffff;
+	border: 1px solid  #991BE2;
+}
+.jumbotron-sm{
+	margin: 0;
+	padding: 0;
+	background-color: black;
+}
+
+.jumbotron{
+	margin: 0;
+	padding: 0;
+	background-color: black;
+}
+#ContactUs{
+	.pull-right {
+		color: white;
+		background-color: #991BE2;
+		border-radius: 0.2666666667em;
+		border: none;
+		width: 150px;
+		display: block;
+		margin: 0 auto;
+		margin-top: 10px;
+		line-height: 25px;
+	}
+}
+	#password-notmatch {
+		.modal-header {
+			background-color: black;
+		}
+		.modal-body {
+			p {
+				color: #ffffff;
+			}
+		}
+	}
+
+.error-not-found{
+	padding: 8%;
+	background-image:url("../img/header_background/space2.jpg");
+	background-size: cover;
+		h4{
+			font-family: "Poppins", "Trebuchet MS", "PT Sans", "Helvetica Neue", "HelveticaNeue-Light", Helvetica, Arial, sans-serif;
+			letter-spacing: -0.04em;
+			font-weight: bold;
+			font-size: 4.5rem;
+			text-align: center;
+			max-width: 50%;
+			color:#ffffff;
+			margin: 20px auto;
+		}
+	}

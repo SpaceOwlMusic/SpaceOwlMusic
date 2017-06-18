@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css?family=Russo+One");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+.navtopsong {
+  display: flex;
+  background-color: black;
+  padding-bottom: 60px;
+  justify-content: space-around; }
+  .navtopsong li:first-child {
+    background-color: #a64dff;
+    padding: 10px 10px; }
+  .navtopsong li:hover {
+    background-color: #a64dff;
+    transition: background-color 0.5s ease; }
+  .navtopsong li {
+    display: inline;
+    list-style-type: none;
+    padding: 10px 10px; }
+    .navtopsong li a {
+      text-decoration: none;
+      padding: 10px 10px;
+      font-family: 'Russo One', sans-serif;
+      font-size: 30px;
+      color: #ffffff; }
+
+.TopSongs {
+  display: flex; }
+
+#audio {
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
+  #audio a {
+    display: block;
+    text-decoration: none;
+    font-family: 'Russo One', sans-serif;
+    color: white;
+    font-size: 20px; }
+  #audio a:hover {
+    color: #a64dff; }
+  #audio section:after {
+    content: '';
+    height: 3px;
+    background-color: #a64dff;
+    display: block;
+    background-repeat: no-repeat;
+    margin: 20px auto; }
+
+.musicpart {
+  padding: 60px 0;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .musicpart h2 {
+    font-family: 'Russo One', sans-serif;
+    color: white;
+    font-size: 60px; }
+
+.scrinimg {
+  height: 150px;
+  width: 200px; }
+
+.linkshowmore {
+  background-color: black;
+  text-align: right; }
+  .linkshowmore a {
+    display: inline-block;
+    text-decoration: none;
+    font-family: 'Russo One', sans-serif;
+    color: white;
+    font-size: 25px;
+    padding: 15px;
+    margin-right: 35px; }
+  .linkshowmore a:hover {
+    color: #be0c15; }
+
+.conteinerTopSongs {
+  display: flex;
+  justify-content: flex-start; }
+
+.conteinermenu {
+  padding-top: 40px;
+  width: 50%;
+  background-color: black; }
+
+.leftfixedmenu ul {
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  padding-top: 45px; }
+.leftfixedmenu li {
+  margin: 30px; }
+.leftfixedmenu a {
+  color: white;
+  font-size: 25px;
+  font-family: 'Russo One', sans-serif;
+  margin: 30px; }
+
+.conteinercontent {
+  padding-right: 40px; }
+
+/*# sourceMappingURL=TopSongs.css.map */
