@@ -30,19 +30,7 @@
 <div id="pagewrap">
     <!--<ХЕДЕР=================================================================================================>-->
     <header id="header">
-        <hgroup class="logoname">
-            <img src="${contextPath}/resources/img/logoowl.png">
-            <h1><a href="#">SpaceOwl Music</a></h1>
-        </hgroup>
-        <nav>
-            <ul id="top-nav">
-                <li><a href="${contextPath}/"><img src="${contextPath}/resources/img/home.png">Home</a></li>
-                <li><a href="${contextPath}/people"><img src="${contextPath}/resources/img/team.png">People</a></li>
-                <li><a href="${contextPath}/profile/settings"><img src="${contextPath}/resources/img/music-player.png">Settings</a>
-                </li>
-
-            </ul>
-        </nav>
+        <jsp:include page="/WEB-INF/views/header.jsp"/>
     </header>
     <div id="content">
         <div id="conteineraddtrack" style="background: url('data: ${sound.bacground.mapperImage.contenttype};base64,${sound.bacground.mapperImage.base64}')") >

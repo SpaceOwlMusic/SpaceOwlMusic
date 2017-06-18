@@ -35,18 +35,7 @@
 <div id="pagewrap">
     <!--<ХЕДЕР=================================================================================================>-->
     <header id="header">
-        <hgroup class="logoname">
-            <img src="${contextPath}/resources/img/logoowl.png">
-            <h1><a href="#">SpaceOwl Music</a></h1>
-        </hgroup>
-        <nav>
-            <ul id="top-nav">
-                <li><a href="${contextPath}/"><img src="${contextPath}/resources/img/home.png">Home</a></li>
-                <li><a href="${contextPath}/people"><img src="${contextPath}/resources/img/team.png">People</a></li>
-                <li><a href="${contextPath}/profile/settings"><img src="${contextPath}/resources/img/music-player.png">Settings</a>
-                </li>
-            </ul>
-        </nav>
+           <jsp:include page="/WEB-INF/views/header.jsp"/>
     </header>
 
 
@@ -54,8 +43,11 @@
 
         <c:forEach items="${dialog}" var="map">
             <div class="row">
+                <div class="col-md-3 col-sm-3">
+                    <img src="data:${map.userSecond.profile.avatar.mapperImage.contenttype};base64,${map.userSecond.profile.avatar.mapperImage.base64}" alt="Avatar" class="img-circle" style="width:100px; height: 100px">
+                </div>
                 <div class="col-md-3 col-sm-3 people-container">
-                    <p>${map.userSecond.firstName} ${map.userSecond.lastName}</p>
+                    <span class="dialogs-name">${map.userSecond.firstName} ${map.userSecond.lastName}</span>
                 </div >
                 <div class="col-md-3 col-sm-3 people-container">
                     <form method="GET" action="${contextPath}/fromDialogs">
@@ -67,9 +59,7 @@
         </c:forEach>
     </div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="${contextPath}/resources/js/jquery-3.2.1.min%20.js"></script>
-<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <script src="${contextPath}/resources/bootstrap/js/bootstrap.min.js"></script>
 <script src="${contextPath}/resources/js/profile.js"></script>
 </body>

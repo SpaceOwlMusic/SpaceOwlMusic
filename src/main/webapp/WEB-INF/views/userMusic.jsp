@@ -30,23 +30,7 @@
 <div id="pagewrap">
     <!--<ХЕДЕР=================================================================================================>-->
     <header id="header">
-        <hgroup class="logoname">
-            <img src="${contextPath}/resources/img/logoowl.png">
-            <h1><a href="#">SpaceOwl Music</a></h1>
-        </hgroup>
-        <nav>
-            <ul id="top-nav">
-                <li><a href="#"><img src="${contextPath}/resources/img/13.png">Top Music</a></li>
-                <li><a href="#"><img src="${contextPath}/resources/img/team.png">People</a></li>
-                <li><a href="#"><img src="${contextPath}/resources/img/user.png"> Profile</a></li>
-                <li>
-                    <form id="searchform">
-                        <input class="inputtext" type="search" placeholder="Search">
-                        <input type="submit" value="Search">
-                    </form>
-                </li>
-            </ul>
-        </nav>
+        <jsp:include page="/WEB-INF/views/header.jsp"/>
     </header>
     <div id="content">
         <div id="addtrack" class="col-sm-4">

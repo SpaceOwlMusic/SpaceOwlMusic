@@ -28,25 +28,7 @@
 <div id="pagewrap">
     <!--<ХЕДЕР=================================================================================================>-->
     <header id="header">
-        <form id="logoutForm" method="POST" action="${contextPath}/logout">
-        </form>
-
-        <hgroup class="logoname">
-            <img src="${contextPath}/resources/img/logoowl.png">
-            <h1><a href="#">SpaceOwl Music</a></h1>
-            <img id="imglogout" src="${contextPath}/resources/img/exit.png">
-            <c:if test="${pageContext.request.userPrincipal.name != null}">
-                <a id="logout" onclick="document.forms['logoutForm'].submit()"> Logout</a></c:if>
-        </hgroup>
-        <nav>
-            <ul id="top-nav">
-                <li><a href="${contextPath}/"><img src="${contextPath}/resources/img/home.png">Home</a></li>
-                <li><a href="${contextPath}/people"><img src="${contextPath}/resources/img/team.png">People</a></li>
-                <li><a href="${contextPath}/profile/settings"><img src="${contextPath}/resources/img/music-player.png">Settings</a>
-                </li>
-
-            </ul>
-        </nav>
+        <jsp:include page="/WEB-INF/views/header.jsp"/>
     </header>
     <!--<НАЧАЛО КОНТЕНТА======================================================================================>-->
     <div id="content">
