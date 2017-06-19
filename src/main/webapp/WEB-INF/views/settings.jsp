@@ -21,15 +21,17 @@
     <!-- Bootstrap styles -->
     <link rel="stylesheet" href="${contextPath}/resources/bootstrap/css/bootstrap.min.css">
     <!-- Generic page styles -->
-    <link rel="stylesheet" href="${contextPath}/resources/css/settings.css">
+
     <link rel="stylesheet" href="${contextPath}/resources/css/profile.css">
-</head>
+    <link rel="stylesheet" href="${contextPath}/resources/css/settings.css">
+    </head>
 <body>
 <div id="pagewrap">
     <!--<ХЕДЕР=================================================================================================>-->
     <header id="header">
         <jsp:include page="/WEB-INF/views/header.jsp"/>
     </header>
+    <div class="settings-style-h2">
     <section id="forminfochange">
         <form method="POST" action="javascript:void(null);" onsubmit="callFirstBlock()" class="form-signin">
             <div class="form-group">

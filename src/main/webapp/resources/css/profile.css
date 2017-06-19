@@ -411,7 +411,7 @@ footer span {
   background: none;
   border: 2px solid #b366ff;
   border-radius: 5px;
-  width: 42%;
+  /*width: 42%;*/
   height: 30px;
   outline: none;
   font-family: 'Russo One', sans-serif; }
