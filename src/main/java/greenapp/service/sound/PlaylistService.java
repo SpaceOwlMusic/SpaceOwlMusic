@@ -12,7 +12,7 @@ import java.util.List;
  */
 public interface PlaylistService {
     public Playlist save(Playlist playlist);
-    public Playlist getPlaylistById(int id);
+    public Playlist getPlaylistById(long id);
     public List<Playlist> getAllPlaylists(Profile profile);
     public List<Playlist> getAllPlaylists();
     public Playlist getDefaultPlaylist();
