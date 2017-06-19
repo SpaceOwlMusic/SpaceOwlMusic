@@ -693,7 +693,7 @@ article {
 }
 
 #formaddmusic {
-    margin-top: 7%;
+    margin-top: 11%;
 }
 
 #baseimgtrack {
@@ -802,4 +802,12 @@ input {
     /* Фон */
     background-color:rgba(0,0,0,.4);
     padding:10px 30px;
+}
+
+.playlistHeader
+{
+    font-family: 'Russo One', sans-serif;
+    margin: 20px;
+    text-align: center;
+    border-bottom: 1px solid #d9b3ff;
 }

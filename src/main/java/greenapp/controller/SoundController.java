@@ -46,7 +46,7 @@ public class SoundController {
     PlaylistDao playlistDao;
 
     @RequestMapping(value = "/{username}/sound", method = RequestMethod.GET)
-    public String sound(Model model, @PathVariable(value = "username") String username) {
+    public String sound(Model model, @PathVariable(value = "username") String username, HttpServletRequest request) {
         if (!username.equals(userService.getCurrentUser().getUsername())) {
             Playlist playlist = playListService.getUserDefaultPlaylist(userService.findByUsername(username));
             model.addAttribute("username", username);
@@ -55,6 +55,8 @@ public class SoundController {
             return "userMusic";
         } else {
             Playlist playlist = playListService.getDefaultPlaylist();
+            //при переході на сторін sound  зберігаємо id дефолтного альбома
+            request.getSession().setAttribute("id_playlist", playlist.getId());
             model.addAttribute("username", username);
             model.addAttribute("sounds", playlist);
             model.addAttribute("playlists", playListService.getAllPlaylists(userService.getCurrentUser().getProfile()));
@@ -66,7 +68,7 @@ public class SoundController {
     @RequestMapping(value = "api/playlist/putSounds", method = RequestMethod.POST, produces = {"application/json"})
     public @ResponseBody
     List<HashMap<String, String>> createPlaylist(@RequestParam("fileaudio") List<MultipartFile> arrMmultipartFile, HttpServletRequest request) throws Exception {
-        int id = (int) request.getSession().getAttribute("id_playlist");
+        long id = (long) request.getSession().getAttribute("id_playlist");
 
         List<HashMap<String, String>> arrayList = new ArrayList<>();
 
@@ -75,7 +77,7 @@ public class SoundController {
 
         //зберігаю на хард музику, при чому в обекті плейліс добавляю їх
         for (int i = 0; i < arrMmultipartFile.size(); i++) {
-            String[] path_name = soundService.addSound(arrMmultipartFile.get(i).getBytes(),playlist);
+            String[] path_name = soundService.addSound(arrMmultipartFile.get(i).getBytes(), playlist);
             HashMap<String, String> h = new HashMap<>();
             h.put("path", path_name[0]);
             h.put("name", path_name[1]);
@@ -118,11 +120,13 @@ public class SoundController {
     //видалиння пісні із  альбома
     @RequestMapping(value = "api/playlist/sound/remove", method = RequestMethod.POST, produces = {"application/json"})
     public @ResponseBody
-    String removeSound(@RequestParam(value = "id_sound") String idSound) throws Exception {
+    String removeSound(@RequestParam(value = "id_sound") String idSound, HttpServletRequest request) throws Exception {
         //переробити костилі із hashcode
-        Playlist playlist = playListService.getDefaultPlaylist();
+        long id = (long) request.getSession().getAttribute("id_playlist");
+
+        Playlist playlist = playListService.getPlaylistById(id);
         Audio audio = playlist.getAudioById(Long.parseLong(idSound));
-        playListService.removeSongFromPlaylist(playListService.getDefaultPlaylist(), audio);
+        playListService.removeSongFromPlaylist(playlist, audio);
         return "{ \"response\":\"" + "good" + "\"}";
     }
 
@@ -130,7 +134,7 @@ public class SoundController {
     //повернення сторінки плейлиста
     @RequestMapping(value = "/{username}/playlist/{playlist}", method = RequestMethod.GET)
     public String plylist(Model model, @PathVariable(value = "playlist") String playlist, @PathVariable(value = "username") String username, HttpServletRequest request) {
-        request.getSession().setAttribute("id_playlist", Integer.parseInt(playlist));
+        request.getSession().setAttribute("id_playlist", Long.parseLong(playlist));
         model.addAttribute("playlist", playlist);
         Playlist playlists = playListService.getPlaylistById(Integer.parseInt(playlist));
         if (playlists == null) return "notFound";
@@ -152,11 +156,16 @@ public class SoundController {
     //загружаем в бд одну песню с возвратом ссылки на нее
     @RequestMapping(value = "api/profile/putSingleAudio", method = RequestMethod.POST, produces = {"application/json"})
     public @ResponseBody
-    String putSingleAudio(@RequestParam("onefileaudio") MultipartFile multipartFile) throws Exception {
+    HashMap<String, String> putSingleAudio(@RequestParam("onefileaudio") MultipartFile multipartFile) throws Exception {
         Playlist playlist = playListService.getDefaultPlaylist();
         String[] name_url = soundService.addSound(multipartFile.getBytes(), playlist);
-        String string = "{\"path\":\""+name_url[0]+"\",\"name\":\""+name_url[1]+"\"}";
-        return string;
+        playListService.save(playlist);
+//        String string = "{\"path\":\""+name_url[0]+"\",\"name\":\""+name_url[1]+"\"}";
+        HashMap<String, String> json = new HashMap<>();
+        json.put("path", name_url[0]);
+        json.put("name", name_url[1]);
+        json.put("id", name_url[2]);
+        return json;
     }
 
 }
