@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.*;
 import java.util.List;
+import java.util.Properties;
 import java.util.Set;
 
 /**
@@ -43,6 +44,23 @@ public class SoundServiceImpl implements SoundService {
         audio.setUrl("http://localhost:8080/greenapp/api/sound/"+mapperSounds.getName());
         audio = soundDao.save(audio);
         playlist.add(audio);
+
+        /*File file = new File("././utils/compareUtil.jar");
+
+        Properties props = new Properties();
+
+        FileInputStream in = new FileInputStream("/resources/database.property");
+        props.load(in);
+
+        Process proc = Runtime.getRuntime().exec(
+                "java  -jar "+file.getAbsolutePath()+" "
+                        +audio.getId()+" \""+audio.getMapperSounds().getPath()+"\" " +
+                        "\""+props.getProperty("jdbc.username")+"\" "+
+                        "\""+props.getProperty("jdbc.password")+"\"");
+
+        InputStream inputStream = proc.getInputStream();
+        InputStream errorStream = proc.getErrorStream();*/
+
 
         String[] url_name = new String[2];
         url_name[0] = "http://localhost:8080/greenapp/api/sound/"+mapperSounds.getName();

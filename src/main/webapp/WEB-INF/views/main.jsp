@@ -55,7 +55,8 @@
                     <span class="menu_link-text"> Sign in/Sign up</span>
                 </button></li>
                 <li><button id="profile">
-                    <span class="menu_link-text" href="${contextPath}/${userForm.username}">Profile</span>
+                    <a href="${contextPath}/${currentUser}"><span >Profile</span></a>
+                        <%--<span class="menu_link-text" href="${contextPath}/${currentUser}" >Profile</span>--%>
                 </button></li>
             </ul>
         </div>

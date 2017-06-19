@@ -78,6 +78,10 @@ public class UserController {
     public String welcome(Model model) {
         model.addAttribute("userForm", new User());
         model.addAttribute("loginStatus",userService.isAuth());
+        if(userService.isAuth())
+        {
+            model.addAttribute("currentUser",userService.getCurrentUser().getUsername());
+        }
         return "main";
     }
 

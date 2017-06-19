@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://D:/SpaceOwlMusic_alpha/greenapp.iml" filepath="D:/SpaceOwlMusic_alpha/greenapp.iml" />
-      <module fileurl="file://D:\FianalSound\greenapp.iml" filepath="D:\FianalSound\greenapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/greenapp.iml" filepath="$PROJECT_DIR$/greenapp.iml" />
     </modules>
   </component>
 </project>
