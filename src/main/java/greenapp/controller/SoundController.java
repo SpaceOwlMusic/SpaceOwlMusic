@@ -46,7 +46,7 @@ public class SoundController {
     PlaylistDao playlistDao;
 
     @RequestMapping(value = "/{username}/sound", method = RequestMethod.GET)
-    public String sound(Model model, @PathVariable(value = "username") String username) {
+    public String sound(Model model, @PathVariable(value = "username") String username,HttpServletRequest request) {
         if (!username.equals(userService.getCurrentUser().getUsername())) {
             Playlist playlist = playListService.getUserDefaultPlaylist(userService.findByUsername(username));
             model.addAttribute("username", username);
@@ -55,6 +55,8 @@ public class SoundController {
             return "userMusic";
         } else {
             Playlist playlist = playListService.getDefaultPlaylist();
+            //при переході на сторін sound  зберігаємо id дефолтного альбома
+            request.getSession().setAttribute("id_playlist", playlist.getId());
             model.addAttribute("username", username);
             model.addAttribute("sounds", playlist);
             model.addAttribute("playlists", playListService.getAllPlaylists(userService.getCurrentUser().getProfile()));
@@ -118,13 +120,18 @@ public class SoundController {
     //видалиння пісні із  альбома
     @RequestMapping(value = "api/playlist/sound/remove", method = RequestMethod.POST, produces = {"application/json"})
     public @ResponseBody
-    String removeSound(@RequestParam(value = "id_sound") String idSound) throws Exception {
+    String removeSound(@RequestParam(value = "id_sound") String idSound,HttpServletRequest request) throws Exception {
         //переробити костилі із hashcode
-        Playlist playlist = playListService.getDefaultPlaylist();
+        int id = (int) request.getSession().getAttribute("id_playlist");
+
+        Playlist playlist = playListService.getPlaylistById((Integer) request.getSession().getAttribute("id_playlist"));
         Audio audio = playlist.getAudioById(Long.parseLong(idSound));
         playListService.removeSongFromPlaylist(playListService.getDefaultPlaylist(), audio);
         return "{ \"response\":\"" + "good" + "\"}";
     }
+
+
+
 
 
     //повернення сторінки плейлиста
@@ -155,6 +162,7 @@ public class SoundController {
     String putSingleAudio(@RequestParam("onefileaudio") MultipartFile multipartFile) throws Exception {
         Playlist playlist = playListService.getDefaultPlaylist();
         String[] name_url = soundService.addSound(multipartFile.getBytes(), playlist);
+        playListService.save(playlist);
         String string = "{\"path\":\""+name_url[0]+"\",\"name\":\""+name_url[1]+"\"}";
         return string;
     }
