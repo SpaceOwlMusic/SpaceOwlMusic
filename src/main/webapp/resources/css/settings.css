@@ -19,7 +19,8 @@ body {
   font-family: 'Francois One', sans-serif;
   font-size: 18px; }
 
-h2 {
+.settings-style-h2 h2 {
+
   margin-bottom: 10px;
   color: #b366ff;
   font-family: 'Russo One', sans-serif; }
@@ -31,5 +32,20 @@ span {
   color: #fffffF;
   font-family: 'Russo One', sans-serif; }
 
+.settings-style-h2 .btn
+{
+  cursor: pointer;
+  padding: 9px 21px;
+  border-radius: 12px;
+  background-color: #b366ff;
+  border: 1px solid #b366ff;
+  font-family: 'Russo One', sans-serif;
+  margin: 4px;
+}
+.settings-style-h2 .btn:hover
+{
+  background-color: transparent;
+  color:#FFFFFF;
+ }
 /*# sourceMappingURL=settings.css.map */
 Add Comment Co
