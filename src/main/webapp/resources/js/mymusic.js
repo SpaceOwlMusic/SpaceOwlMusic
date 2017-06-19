@@ -1,36 +1,14 @@
 // Popup for Music===============================================================================
-var buttonList = document.querySelectorAll('.usermusic button');
-var popupList = document.querySelectorAll('.popup');
-var popupInnerList = document.querySelectorAll('.popup-inner');
-var popupCloseList = document.querySelectorAll('.popup-close');
-var popupplaylist = document.getElementById('playlist'),
-    popupmusic = document.getElementById('track');
+var addTrack = document.getElementById('playlist');
 
-
-for (var i = 0; i < buttonList.length; i++) {
-    buttonList[i].onclick = function () {
-        var popupId = this.dataset.music;
-        document.getElementById(popupId).style.display = 'block';
-
-    }
+addTrack.onclick = function () {
+    $('#track-modal').modal();
 }
 
-for (var i = 0; i < popupList.length; i++) {
-    popupList[i].onclick = function () {
-        this.style.display = '';
-    }
-}
+var createPlaylistModal = document.getElementById('createPlaylistModal');
 
-for (var i = 0; i < popupInnerList.length; i++) {
-    popupInnerList[i].onclick = function (event) {
-        event.stopPropagation();
-    }
-}
-
-for (var i = 0; i < popupCloseList.length; i++) {
-    popupCloseList[i].onclick = function () {
-        this.parentElement.parentElement.style.display = '';
-    }
+createPlaylistModal.onclick = function () {
+    $('#playlist-modal').modal();
 }
 
 // Upload  Music(Single Track)===============================================================================
