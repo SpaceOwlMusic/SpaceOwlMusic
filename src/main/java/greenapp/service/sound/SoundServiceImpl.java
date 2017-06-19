@@ -44,9 +44,10 @@ public class SoundServiceImpl implements SoundService {
         audio = soundDao.save(audio);
         playlist.add(audio);
 
-        String[] url_name = new String[2];
+        String[] url_name = new String[3];
         url_name[0] = "http://localhost:8080/greenapp/api/sound/"+mapperSounds.getName();
         url_name[1] = audio.getTitle();
+        url_name[2]= String.valueOf(audio.getId());
         return url_name;
     }
 

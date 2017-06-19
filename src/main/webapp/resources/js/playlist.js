@@ -108,17 +108,12 @@ $(document).ready(function () {
 });
 
 function deleteSound(id) {
-    var elem = document.getElementById('sound'+id);
-    elem.remove();
-
-
     $.ajax({
         type: 'POST',
         url: 'http://localhost:8080/greenapp/api/playlist/sound/remove',
         data: {id_sound: id},
         success: function (data) {
-            var elem = document.getElementById(id);
-            console.log(elem);
+            var elem = document.getElementById('sound'+id);
             elem.remove();
         },
         error: function (xhr, str) {
