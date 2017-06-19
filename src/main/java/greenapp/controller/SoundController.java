@@ -122,9 +122,9 @@ public class SoundController {
     public @ResponseBody
     String removeSound(@RequestParam(value = "id_sound") String idSound,HttpServletRequest request) throws Exception {
         //переробити костилі із hashcode
-        int id = (int) request.getSession().getAttribute("id_playlist");
+         long id = (long) request.getSession().getAttribute("id_playlist");
 
-        Playlist playlist = playListService.getPlaylistById((Integer) request.getSession().getAttribute("id_playlist"));
+        Playlist playlist = playListService.getPlaylistById(id);
         Audio audio = playlist.getAudioById(Long.parseLong(idSound));
         playListService.removeSongFromPlaylist(playListService.getDefaultPlaylist(), audio);
         return "{ \"response\":\"" + "good" + "\"}";

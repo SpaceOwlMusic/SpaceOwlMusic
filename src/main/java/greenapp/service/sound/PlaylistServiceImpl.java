@@ -30,7 +30,7 @@ public class PlaylistServiceImpl implements PlaylistService {
     }
 
     @Override
-    public Playlist getPlaylistById(int id) {
+    public Playlist getPlaylistById(long id) {
         return playlistDao.findById(id);
     }
 
@@ -66,11 +66,10 @@ public class PlaylistServiceImpl implements PlaylistService {
 
     @Override
     public void removeSongFromPlaylist(Playlist playlist, Audio audio) {
-        //переробити
+        //переробити БИДЛО_КОД
         Set<Audio> audioList = playlist.getSounds();
         for (Audio a : audioList) {
-            if (a.getId() == audio.getId()) {
-                int r = 3;
+            if (a.getId().equals(audio.getId())) {
                 audioList.remove(a);
                 break;
             }
