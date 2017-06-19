@@ -27,7 +27,8 @@
 </hgroup>
 <nav>
     <ul id="top-nav">
-        <li><a href="${contextPath}/${pageContext.request.userPrincipal.name}"><img src="${contextPath}/resources/img/home.png">Home</a></li>
+        <li><a href="${contextPath}/"><img src="${contextPath}/resources/img/home.png">Home</a></li>
+        <li><a href="${contextPath}/${pageContext.request.userPrincipal.name}"><img src="${contextPath}/resources/img/profile.png">Profile</a></li>
         <li><a href="${contextPath}/people"><img src="${contextPath}/resources/img/team.png">People</a></li>
         <li><a href="${contextPath}/profile/settings"><img src="${contextPath}/resources/img/music-player.png">Settings</a>
         </li>
