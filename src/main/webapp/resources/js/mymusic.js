@@ -60,7 +60,7 @@ $(document).ready(function () {
             processData: false,
             contentType: false
         }).done(function (data) {
-            // console.log(data);
+            console.log("good");
             // audioContaineraudio.html(' ');
             // var audio = '<audio src=' + data["path"] + ' controls/>';
             // audioContaineraudio.append(audio);
@@ -68,7 +68,10 @@ $(document).ready(function () {
 
             audioplaylist = '<li style="margin:3%; width: 100%;border-radius: 10px; background-color: #fafafa;" class="list-group-item list-group-item-success"><span style="display: block">' + data["name"] + '</span><audio preload="none" src=' + data["path"] + ' controls/> </li>';
             audioContaineraudio.append(audioplaylist);
-        });
+        }).fail(function (xhr) {
+            console.log("error: "+xhr.response);
+
+        });;
     });
 });
 
@@ -127,8 +130,6 @@ function call() {
 }
 
 function deleteAlbum(id) {
-
-
     $.ajax({
         type: 'POST',
         url: 'http://localhost:8080/greenapp/api/playlist/remove',
@@ -146,17 +147,12 @@ function deleteAlbum(id) {
 
 
 function deleteSound(id) {
-    var elem = document.getElementById('sound'+id);
-    elem.remove();
-
-
     $.ajax({
         type: 'POST',
         url: 'http://localhost:8080/greenapp/api/playlist/sound/remove',
         data: {id_sound: id},
         success: function (data) {
-            var elem = document.getElementById(id);
-            console.log(elem);
+            var elem = document.getElementById('sound'+id);
             elem.remove();
         },
         error: function (xhr, str) {

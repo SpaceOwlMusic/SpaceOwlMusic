@@ -86,7 +86,7 @@
             </div>
 
             <div id="containeraudiolist">
-                <c:forEach items="${sounds.sounds}" var="map">
+                    <c:forEach items="${sounds.sounds}" var="map">
 
                     <li  style="margin:3%; width: 100%;border-radius: 10px;  background-color: #fafafa;" id="sound${map.id}"
                         class="list-group-item list-group-item-success">
