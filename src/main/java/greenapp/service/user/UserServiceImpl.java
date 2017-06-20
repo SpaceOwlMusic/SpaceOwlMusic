@@ -80,4 +80,11 @@ public class UserServiceImpl implements UserService {
         return isAuth;
 
     }
+
+    @Override
+    public void addFriend(Long friendId) {
+        User curUser = getCurrentUser();
+        curUser.getFriends().add(findByID(friendId.intValue()));
+        userDao.save(curUser);
+    }
 }

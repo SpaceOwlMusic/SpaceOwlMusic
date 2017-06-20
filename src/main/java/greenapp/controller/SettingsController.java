@@ -1,6 +1,7 @@
 package greenapp.controller;
 
 import greenapp.model.photo.Image;
+import greenapp.model.user.User;
 import greenapp.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -31,6 +32,9 @@ public class SettingsController {
     @RequestMapping(value = "/api/settings/update_first_block", method = RequestMethod.POST)
     public String updateFirstBlock(Model model, @RequestParam HashMap<String,String> data) {
         model.addAttribute("user", userService.getCurrentUser());
+        User user=userService.getCurrentUser();
+        int ee=4;
+
 
         return "settings";
     }

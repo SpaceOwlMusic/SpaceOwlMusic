@@ -17,7 +17,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Chat OwlSpase</title>
+    <title>Chat Owl Spase</title>
 
     <link rel="stylesheet" href="http://cdn.jsdelivr.net/emojione/1.3.0/assets/css/emojione.min.css"/>
     <link rel="stylesheet" href="${contextPath}/resources/css/styles.css"/>
@@ -25,7 +25,9 @@
 </head>
 
 <body>
-
+<%--<header id="header">
+    <jsp:include page="/WEB-INF/views/header.jsp"/>
+</header>--%>
 <div class="shoutbox">
 
     <h1>Live <img src='${contextPath}/resources/img/refresh.png'/></h1>
@@ -48,7 +50,7 @@
         <form >
             <label class="shoutbox-comment-label" for="shoutbox-comment">Message </label> <textarea
                 id="shoutbox-comment" name="comment" maxlength='240'></textarea>
-            <input type="submit" value="Shout!"/>
+            <input type="submit" value="Send"/>
         </form>
     </div>
 

@@ -30,7 +30,6 @@ public class DialogController {
         List<Dialog> dialog = dialogService.getMyDialogs();
         model.addAttribute("dialog", dialog);
 
-
         return "dialogs";
     }
 
