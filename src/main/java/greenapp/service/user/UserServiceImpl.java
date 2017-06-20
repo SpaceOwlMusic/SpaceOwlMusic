@@ -69,6 +69,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public User update(User user) {
+        return userDao.save(user);
+    }
+
+    @Override
     public boolean isAuth() {
         boolean isAuth = false;
         try {

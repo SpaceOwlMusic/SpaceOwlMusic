@@ -49,25 +49,33 @@
                 </div>
                 <div class="checkbox">
                     <h2>Gender</h2>
-                        <c:choose>
+                    <c:choose>
                         <c:when test="${user.gender.equals('male')}">
-                        <input type="radio" name="gender" class="gender" value="male" checked><span>Male</span> <br>
-                        <input type="radio" name="gender" class="gender" value="female"><span>Female</span> <br>
-                        <input type="radio" name="gender" class="gender" value="other"> <span>Other </span>
+                            <input type="radio" name="gender" class="gender" value="male" checked><span>Male</span> <br>
+                            <input type="radio" name="gender" class="gender" value="female"><span>Female</span> <br>
+                            <input type="radio" name="gender" class="gender" value="other"> <span>Other </span>
                         </c:when>
                         <c:when test="${user.gender.equals('female')}">
-                        <input type="radio" name="gender" class="gender" value="male"><span> Male</span> <br>
-                        <input type="radio" name="gender" class="gender" value="female" checked><span>Female</span> <br>
-                        <input type="radio" name="gender" class="gender" value="other" checked> <span>Other </span>
+                            <input type="radio" name="gender" class="gender" value="male"><span> Male</span> <br>
+                            <input type="radio" name="gender" class="gender" value="female" checked><span>Female</span>
+                            <br>
+                            <input type="radio" name="gender" class="gender" value="other"> <span>Other </span>
                         </c:when>
                         <c:when test="${user.gender.equals('other')}">
-                        <input type="radio" name="gender" class="gender" value="male"><span> Male</span> <br>
-                        <input type="radio" name="gender" class="gender" value="female"><span>Female</span> <br>
-                        <input type="radio" name="gender" class="gender" value="other checked" checked>
-                        <span>Other </span>
+                            <input type="radio" name="gender" class="gender" value="male"><span> Male</span> <br>
+                            <input type="radio" name="gender" class="gender" value="female"><span>Female</span> <br>
+                            <input type="radio" name="gender" class="gender" value="other checked" checked>
+                            <span>Other </span>
+                        </c:when>
+                        <c:when test="${user.gender==null}">
+                            <input type="radio" name="gender" class="gender" value="male"><span> Male</span> <br>
+                            <input type="radio" name="gender" class="gender" value="female"><span>Female</span> <br>
+                            <input type="radio" name="gender" class="gender" value="other checked" checked>
+                            <span>Other </span>
                         </c:when>
 
-                        </c:choose>
+
+                    </c:choose>
                 </div>
                 <div class="form-group">
                     <label for="sel1">Relationship status:</label>
@@ -82,7 +90,7 @@
                                 <option>Married</option>
                             </c:when>
                             <c:when test="${user.relationship.equals('Other')}">
-                                <option  selected="selected">Other</option>
+                                <option selected="selected">Other</option>
                                 <option>Single</option>
                                 <option>In a relationship</option>
                                 <option>Married</option>
@@ -118,40 +126,46 @@
             </form>
 
 
-            <form>
+            <form method="POST" action="javascript:void(null);" onsubmit="callSecondBlock()" class="form-signin">
 
                 <h2>Interests</h2>
                 <div class="form-group">
                     <label>Favorite music:</label>
-                    <textarea class="form-control" rows="4">${user.profile.description.favoriteMusic}</textarea>
+                    <textarea name="favorite_music" class="form-control"
+                              rows="4">${user.profile.description.favoriteMusic}</textarea>
                 </div>
                 <div class="form-group">
                     <label>Hobbies:</label>
-                    <textarea class="form-control" rows="4">${user.profile.description.hobbies}</textarea>
+                    <textarea name="hobbies" class="form-control"
+                              rows="4">${user.profile.description.hobbies}</textarea>
                 </div>
 
 
                 <div class="form-group">
                     <label>Tell about yourself:</label>
-                    <textarea class="form-control" rows="4">${user.profile.description.aboutYourself}</textarea>
+                    <textarea name="about_yourself" class="form-control"
+                              rows="4">${user.profile.description.aboutYourself}</textarea>
                 </div>
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>
-            <form>
+            <form method="POST" action="javascript:void(null);" onsubmit="callThirdBlock()" class="form-signin">
 
                 <h2>Inspiration</h2>
                 <div class="form-group">
                     <label>Your source of inspiration:</label>
-                    <textarea class="form-control" rows="4">${user.profile.description.inspiration}</textarea>
+                    <textarea name="inspiration" class="form-control"
+                              rows="4">${user.profile.description.inspiration}</textarea>
                 </div>
                 <div class="form-group">
                     <label>Wich music do you compose:</label>
-                    <textarea class="form-control" rows="4">${user.profile.description.musicCompose}</textarea>
+                    <textarea name="you_compose" class="form-control"
+                              rows="4">${user.profile.description.musicCompose}</textarea>
                 </div>
 
                 <div class="form-group">
                     <label>Other information:</label>
-                    <textarea class="form-control" rows="4">${user.profile.description.otherInformation}</textarea>
+                    <textarea name="other" class="form-control"
+                              rows="4">${user.profile.description.otherInformation}</textarea>
                 </div>
 
 
