@@ -36,17 +36,18 @@ public class SoundServiceImpl implements SoundService {
         Audio audio = new Audio();
         //aSound sound = new Sound();
         audio.setMapperSounds(mapperSounds);
-        audio= TagsUtil.getSoundMetaData(audio);
-        if(audio.getTitle()==null)
+        audio = TagsUtil.getSoundMetaData(audio);
+        if (audio.getTitle() == null)
             audio.setTitle("title sound test" + mapperSoundDao.findAll().size());
 
-        audio.setUrl("http://localhost:8080/greenapp/api/sound/"+mapperSounds.getName());
+        audio.setUrl("http://localhost:8080/greenapp/api/sound/" + mapperSounds.getName());
         audio = soundDao.save(audio);
         playlist.add(audio);
 
-        String[] url_name = new String[2];
-        url_name[0] = "http://localhost:8080/greenapp/api/sound/"+mapperSounds.getName();
+        String[] url_name = new String[3];
+        url_name[0] = "http://localhost:8080/greenapp/api/sound/" + mapperSounds.getName();
         url_name[1] = audio.getTitle();
+        url_name[2] = String.valueOf(audio.getId());
         return url_name;
     }
 
@@ -80,7 +81,7 @@ public class SoundServiceImpl implements SoundService {
 
     @Override
     public Audio getSoundById(long id) {
-        Audio sound=soundDao.findById(id);
+        Audio sound = soundDao.findById(id);
         return sound;
     }
 

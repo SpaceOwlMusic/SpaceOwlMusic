@@ -201,9 +201,9 @@ function appendComments(res) {
         var msg = res.history[i];
 
         ul.append('<li>' +
-            '<span class="shoutbox-username">' + msg.sender +': '+ '</span>' +
+            '<span class="shoutbox-username" style="font-size: 22px; color:#a64dff">' + msg.sender +': '+ '</span>' +
 
-            '<span class="shoutbox-username">' + msg.message + '</span>' +
+            '<span class="shoutbox-username" style="font-size: 22px">' + msg.message + '</span>' +
 
 
             '</li>');

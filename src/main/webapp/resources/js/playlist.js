@@ -59,7 +59,9 @@ $(document).ready(function () {
         }).done(function (data) {
             for (var key in data) {
                 var audioname = data[key].name;
-                audioplaylist = '<li style="margin:3%; width: 50%;border-radius: 10px;" class="list-group-item list-group-item-success"><i class="fa fa-trash-o" aria-hidden="true" onclick="deleteSound(98)"></i><span style="display: block">' + audioname + '</span><audio preload="none" src= ' + data[key].path + ' controls/> </li>';
+                var id = data[key].id;
+
+                audioplaylist = '<li style="margin:3%; width: 50%;border-radius: 10px;" id=sound'+id+' class="list-group-item list-group-item-success"><i class="fa fa-trash-o" aria-hidden="true" onclick="deleteSound('+id+')"></i><span style="display: block">' + audioname + '</span><audio preload="none" src= ' + data[key].path + ' controls/> </li>';
                 audioContaineraudiolist.append(audioplaylist);
             }
         });
@@ -108,17 +110,12 @@ $(document).ready(function () {
 });
 
 function deleteSound(id) {
-    var elem = document.getElementById('sound'+id);
-    elem.remove();
-
-
     $.ajax({
         type: 'POST',
         url: 'http://localhost:8080/greenapp/api/playlist/sound/remove',
         data: {id_sound: id},
         success: function (data) {
-            var elem = document.getElementById(id);
-            console.log(elem);
+            var elem = document.getElementById('sound'+id);
             elem.remove();
         },
         error: function (xhr, str) {
@@ -127,3 +124,13 @@ function deleteSound(id) {
     });
 
 }
+
+
+document.addEventListener('play', function(e){
+    var audios = document.getElementsByTagName('audio');
+    for(var i = 0, len = audios.length; i < len;i++){
+        if(audios[i] != e.target){
+            audios[i].pause();
+        }
+    }
+}, true);

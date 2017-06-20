@@ -1,6 +1,10 @@
 // Popup for Music===============================================================================
 var addTrack = document.getElementById('playlist');
 
+function hide_modal() {
+    $('#track-modal').modal('hide');
+}
+
 addTrack.onclick = function () {
     $('#track-modal').modal();
 }
@@ -22,9 +26,8 @@ $(document).ready(function () {
     var audioContaineraudio = $('#containeraudiolist');
     var audioplaylist = "";
 
-
     $('#uploadtrack').on('click', function () {
-        popupplaylist.style.display = '';
+        hide_modal();
         var filename = $.trim(file.val());
         if (!(isMp3(filename))) {
             alert("Please browse a Mp3/Wav file to upload");
@@ -39,17 +42,15 @@ $(document).ready(function () {
             contentType: false
         }).done(function (data) {
             console.log("good");
-            // audioContaineraudio.html(' ');
-            // var audio = '<audio src=' + data["path"] + ' controls/>';
-            // audioContaineraudio.append(audio);
-           // var audioname = "test";
-
-            audioplaylist = '<li style="margin:3%; width: 100%;border-radius: 10px; background-color: #fafafa;" class="list-group-item list-group-item-success"><span style="display: block">' + data["name"] + '</span><audio preload="none" src=' + data["path"] + ' controls/> </li>';
+            var sound = data["id"];
+            var deleteLi="sound"+sound;
+            audioplaylist = '<li style="margin:3%; width: 100%;border-radius: 10px; background-color: #fafafa;" id='+deleteLi+' class="list-group-item list-group-item-success"><i class="fa fa-trash-o" aria-hidden="true" onclick=deleteSound('+sound+') ></i><span style="display: block">' + data["name"] + '</span><audio preload="none" src=' + data["path"] + ' controls/> </li>';
             audioContaineraudio.append(audioplaylist);
         }).fail(function (xhr) {
-            console.log("error: "+xhr.response);
+            console.log("error: " + xhr.response);
 
-        });;
+        });
+        ;
     });
 });
 
@@ -125,12 +126,13 @@ function deleteAlbum(id) {
 
 
 function deleteSound(id) {
+    console.log("id: " + id);
     $.ajax({
         type: 'POST',
         url: 'http://localhost:8080/greenapp/api/playlist/sound/remove',
         data: {id_sound: id},
         success: function (data) {
-            var elem = document.getElementById('sound'+id);
+            var elem = document.getElementById('sound' + id);
             elem.remove();
         },
         error: function (xhr, str) {
@@ -143,3 +145,11 @@ function deleteSound(id) {
 
 
 
+document.addEventListener('play', function(e){
+    var audios = document.getElementsByTagName('audio');
+    for(var i = 0, len = audios.length; i < len;i++){
+        if(audios[i] != e.target){
+            audios[i].pause();
+        }
+    }
+}, true);

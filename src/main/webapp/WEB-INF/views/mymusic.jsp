@@ -57,11 +57,11 @@
                                         </form>
                                     </div>
                                     <div class="col-md-8">
-                                        <article>1.Enter the name of the track please</article>
-                                        <article>2.Choose the audiofile</article>
-                                        <form id="formtrackname">
-                                            <input type="text" id="trackname" placeholder=" Enter trackname">
-                                        </form>
+                                        <%--<article>1.Enter the name of the track please</article>--%>
+                                        <%--<article>2.Choose the audiofile</article>--%>
+                                        <%--<form id="formtrackname">--%>
+                                            <%--<input type="text" id="trackname" placeholder=" Enter trackname">--%>
+                                        <%--</form>--%>
                                         <form class="settingsprivasy">
                                             <article>Privasy settings</article>
                                             <label class="checkbox-inline"><input type="radio" name="privacyRadio" value="1"
@@ -75,7 +75,7 @@
 
                                         </form>
                                         <form id="formaddmusic">
-                                            <input type="text" id="trackdescription" placeholder=" Add description">
+                                            <%--<input type="text" id="trackdescription" placeholder=" Add description">--%>
                                             <input type="file" name="onefileaudio" id="addsingletrack" class="inputfile"/>
                                             <label for="addsingletrack"> Choose a file</label>
                                             <button id="uploadtrack" type="button"> Upload</button>
@@ -119,7 +119,7 @@
                     <li  style="margin:3%; width: 100%;border-radius: 10px;  background-color: #fafafa;" id="sound${map.id}"
                         class="list-group-item list-group-item-success">
                         <i class="fa fa-trash-o" aria-hidden="true" onclick="deleteSound(${map.id})" ></i>
-                        <span style="display: block">' + ${map.title} + '</span>
+                        <span style="display: block">${map.title}</span>
                         <audio src='${map.url}' preload="none" controls></audio>
                     </li>
                 </c:forEach>
