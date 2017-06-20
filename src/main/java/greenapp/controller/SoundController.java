@@ -81,6 +81,7 @@ public class SoundController {
             HashMap<String, String> h = new HashMap<>();
             h.put("path", path_name[0]);
             h.put("name", path_name[1]);
+            h.put("id", path_name[2]);
             arrayList.add(h);
         }
         //зберігаю зміни в бд

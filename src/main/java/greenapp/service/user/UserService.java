@@ -18,6 +18,8 @@ public interface UserService {
 
     User getCurrentUser();
 
+    User update(User user);
+
     boolean isAuth();
 
 

@@ -40,19 +40,22 @@
 
 
     <div id="content" class="container people">
-
         <c:forEach items="${dialog}" var="map">
+            <c:set var="user" value="${map.userSecond}" />
+            <c:if test="${user.username == pageContext.request.userPrincipal.name}">
+                <c:set var="user" value="${map.userFirst}" />
+            </c:if>
             <div class="row">
                 <div class="col-md-3 col-sm-3">
-                    <img src="data:${map.userSecond.profile.avatar.mapperImage.contenttype};base64,${map.userSecond.profile.avatar.mapperImage.base64}" alt="Avatar" class="img-circle" style="width:100px; height: 100px">
+                    <img src="data:${user.profile.avatar.mapperImage.contenttype};base64,${user.profile.avatar.mapperImage.base64}" alt="Avatar" class="img-circle" style="width:100px; height: 100px">
                 </div>
                 <div class="col-md-3 col-sm-3 people-container">
-                    <span class="dialogs-name">${map.userSecond.firstName} ${map.userSecond.lastName}</span>
+                    <span class="dialogs-name">${user.firstName} ${user.lastName}</span>
                 </div >
                 <div class="col-md-3 col-sm-3 people-container">
                     <form method="GET" action="${contextPath}/fromDialogs">
                         <button id="people-send-message" type="submit" value="send message">Open dialog</button>
-                        <input type="hidden" value="${map.userSecond.username}" name="username">
+                        <input type="hidden" value="${user.username}" name="username">
                     </form>
                 </div>
             </div>

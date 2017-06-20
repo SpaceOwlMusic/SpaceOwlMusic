@@ -24,7 +24,7 @@
 
     <link rel="stylesheet" href="${contextPath}/resources/css/profile.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/settings.css">
-    </head>
+</head>
 <body>
 <div id="pagewrap">
     <!--<ХЕДЕР=================================================================================================>-->
@@ -32,131 +32,147 @@
         <jsp:include page="/WEB-INF/views/header.jsp"/>
     </header>
     <div class="settings-style-h2">
-    <section id="forminfochange">
-        <form method="POST" action="javascript:void(null);" onsubmit="callFirstBlock()" class="form-signin">
-            <div class="form-group">
-                <h2>General Info</h2>
-                <label for="email">Email address:</label>
-                <input type="email" class="form-control" id="email" name="email" value="${user.email}">
-            </div>
-            <div class="form-group">
-                <label> Name:</label>
-                <input type="text" name="first_name" class="form-control" value="${user.firstName}">
-            </div>
-            <div class=" form-group">
-                <label>Last name:</label>
-                <input type="text" name="last_name" class="form-control" value="${user.lastName}">
-            </div>
-            <div class="checkbox">
-                <h2>Gender</h2>
-                <c:choose>
-
-                    <c:when test="${user.gender.equals('male')}">
-                        <label class="checkbox-inline"><input type="checkbox" name="gender" checked value="1">Male</label>
-                        <label class="checkbox-inline"><input type="checkbox" name="gender" value="2">Female</label>
-                        <label class="checkbox-inline"><input type="checkbox" name="gender" value="3">Other</label> </c:when>
-                    <c:when test="${user.gender.equals('female')}">
-                        <label class="checkbox-inline"><input type="checkbox" class="gender" value="1">Male</label>
-                        <label class="checkbox-inline"><input type="checkbox" class="gender" checked value="2">Female</label>
-                        <label class="checkbox-inline"><input type="checkbox" class="gender" value="3">Other</label> </c:when>
-                    <c:when test="${user.gender.equals('other')}">
-                        <label class="checkbox-inline"><input type="checkbox" class="gender" value="1">Male</label>
-                        <label class="checkbox-inline"><input type="checkbox" class="gender" value="2">Female</label>
-                        <label class="checkbox-inline"><input type="checkbox" class="gender" checked value="3">Other</label> </c:when>
-
-                </c:choose>
-
-            </div>
-            <div class="form-group">
-                <label for="sel1">Relationship status:</label>
-                <select class="form-control" id="sel1">
-
+        <section id="forminfochange">
+            <form method="POST" action="javascript:void(null);" onsubmit="callFirstBlock()" class="form-signin">
+                <div class="form-group">
+                    <h2>General Info</h2>
+                    <label for="email">Email address:</label>
+                    <input type="email" class="form-control" id="email" name="email" value="${user.email}">
+                </div>
+                <div class="form-group">
+                    <label> Name:</label>
+                    <input type="text" name="first_name" class="form-control" value="${user.firstName}">
+                </div>
+                <div class=" form-group">
+                    <label>Last name:</label>
+                    <input type="text" name="last_name" class="form-control" value="${user.lastName}">
+                </div>
+                <div class="checkbox">
+                    <h2>Gender</h2>
                     <c:choose>
-                        <c:when test="${user.relationship==null}">
-                            <option selected="selected">not selected</option>
-                            <option>Other</option>
-                            <option>Single</option>
-                            <option>In a relationship</option>
-                            <option>Married</option>
+                        <c:when test="${user.gender.equals('male')}">
+                            <input type="radio" name="gender" class="gender" value="male" checked><span>Male</span> <br>
+                            <input type="radio" name="gender" class="gender" value="female"><span>Female</span> <br>
+                            <input type="radio" name="gender" class="gender" value="other"> <span>Other </span>
                         </c:when>
-                        <c:when test="${user.relationship.equals('Other')}">
-                            <option selected selected="selected">Other</option>
-                            <option>Single</option>
-                            <option>In a relationship</option>
-                            <option>Married</option>
+                        <c:when test="${user.gender.equals('female')}">
+                            <input type="radio" name="gender" class="gender" value="male"><span> Male</span> <br>
+                            <input type="radio" name="gender" class="gender" value="female" checked><span>Female</span>
+                            <br>
+                            <input type="radio" name="gender" class="gender" value="other"> <span>Other </span>
                         </c:when>
-
-                        <c:when test="${user.relationship.equals('Single')}">
-                            <option selected>Other</option>
-                            <option selected="selected">Single</option>
-                            <option>In a relationship</option>
-                            <option>Married</option>
+                        <c:when test="${user.gender.equals('other')}">
+                            <input type="radio" name="gender" class="gender" value="male"><span> Male</span> <br>
+                            <input type="radio" name="gender" class="gender" value="female"><span>Female</span> <br>
+                            <input type="radio" name="gender" class="gender" value="other checked" checked>
+                            <span>Other </span>
                         </c:when>
-
-                        <c:when test="${user.relationship.equals('In a relationship')}">
-                            <option selected>Other</option>
-                            <option>Single</option>
-                            <option selected="selected">In a relationship</option>
-                            <option>Married</option>
-                        </c:when>
-
-                        <c:when test="${user.relationship.equals('Married')}">
-                            <option selected>Other</option>
-                            <option>Single</option>
-                            <option>In a relationship</option>
-                            <option selected="selected">Married</option>
+                        <c:when test="${user.gender==null}">
+                            <input type="radio" name="gender" class="gender" value="male"><span> Male</span> <br>
+                            <input type="radio" name="gender" class="gender" value="female"><span>Female</span> <br>
+                            <input type="radio" name="gender" class="gender" value="other checked" checked>
+                            <span>Other </span>
                         </c:when>
 
 
                     </c:choose>
+                </div>
+                <div class="form-group">
+                    <label for="sel1">Relationship status:</label>
+                    <select class="form-control" id="sel1">
 
-                </select>
-            </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-        </form>
+                        <c:choose>
+                            <c:when test="${user.relationship==null}">
+                                <option selected="selected">not selected</option>
+                                <option>Other</option>
+                                <option>Single</option>
+                                <option>In a relationship</option>
+                                <option>Married</option>
+                            </c:when>
+                            <c:when test="${user.relationship.equals('Other')}">
+                                <option selected="selected">Other</option>
+                                <option>Single</option>
+                                <option>In a relationship</option>
+                                <option>Married</option>
+                            </c:when>
 
+                            <c:when test="${user.relationship.equals('Single')}">
+                                <option selected>Other</option>
+                                <option selected="selected">Single</option>
+                                <option>In a relationship</option>
+                                <option>Married</option>
+                            </c:when>
 
-        <form>
+                            <c:when test="${user.relationship.equals('In a relationship')}">
+                                <option selected>Other</option>
+                                <option>Single</option>
+                                <option selected="selected">In a relationship</option>
+                                <option>Married</option>
+                            </c:when>
 
-            <h2>Interests</h2>
-            <div class="form-group">
-                <label>Favorite music:</label>
-                <textarea class="form-control" rows="4">${user.profile.description.favoriteMusic}</textarea>
-            </div>
-            <div class="form-group">
-                <label>Hobbies:</label>
-                <textarea class="form-control" rows="4">${user.profile.description.hobbies}</textarea>
-            </div>
-
-
-            <div class="form-group">
-                <label>Tell about yourself:</label>
-                <textarea class="form-control" rows="4">${user.profile.description.aboutYourself}</textarea>
-            </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-        </form>
-        <form>
-
-            <h2>Inspiration</h2>
-            <div class="form-group">
-                <label>Your source of inspiration:</label>
-                <textarea class="form-control" rows="4">${user.profile.description.inspiration}</textarea>
-            </div>
-            <div class="form-group">
-                <label>Wich music do you compose:</label>
-                <textarea class="form-control" rows="4">${user.profile.description.musicCompose}</textarea>
-            </div>
-
-            <div class="form-group">
-                <label>Other information:</label>
-                <textarea class="form-control" rows="4">${user.profile.description.otherInformation}</textarea>
-            </div>
+                            <c:when test="${user.relationship.equals('Married')}">
+                                <option selected>Other</option>
+                                <option>Single</option>
+                                <option>In a relationship</option>
+                                <option selected="selected">Married</option>
+                            </c:when>
 
 
-            <button type="submit" class="btn btn-default">Submit</button>
-        </form>
-    </section>
-</div>
+                        </c:choose>
+
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+
+
+            <form method="POST" action="javascript:void(null);" onsubmit="callSecondBlock()" class="form-signin">
+
+                <h2>Interests</h2>
+                <div class="form-group">
+                    <label>Favorite music:</label>
+                    <textarea name="favorite_music" class="form-control"
+                              rows="4">${user.profile.description.favoriteMusic}</textarea>
+                </div>
+                <div class="form-group">
+                    <label>Hobbies:</label>
+                    <textarea name="hobbies" class="form-control"
+                              rows="4">${user.profile.description.hobbies}</textarea>
+                </div>
+
+
+                <div class="form-group">
+                    <label>Tell about yourself:</label>
+                    <textarea name="about_yourself" class="form-control"
+                              rows="4">${user.profile.description.aboutYourself}</textarea>
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+            <form method="POST" action="javascript:void(null);" onsubmit="callThirdBlock()" class="form-signin">
+
+                <h2>Inspiration</h2>
+                <div class="form-group">
+                    <label>Your source of inspiration:</label>
+                    <textarea name="inspiration" class="form-control"
+                              rows="4">${user.profile.description.inspiration}</textarea>
+                </div>
+                <div class="form-group">
+                    <label>Wich music do you compose:</label>
+                    <textarea name="you_compose" class="form-control"
+                              rows="4">${user.profile.description.musicCompose}</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Other information:</label>
+                    <textarea name="other" class="form-control"
+                              rows="4">${user.profile.description.otherInformation}</textarea>
+                </div>
+
+
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+        </section>
+    </div>
 </div>
 <script type="text/javascript" src="${contextPath}/resources/js/jquery-1.11.3.min.js"></script>
 

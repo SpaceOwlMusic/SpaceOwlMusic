@@ -133,9 +133,9 @@
         }, 2000);
     });
 
-    // Попробовала сделать автоматический запрос на обновление каждые 20 сек
+    // Попробовала сделать автоматический запрос на обновление каждые 5 сек
     // без тебя не знаю работает ли
-    setInterval(load,10000);
+    setInterval(load,5000);
 
 
     function formOpen(){
@@ -201,9 +201,9 @@ function appendComments(res) {
         var msg = res.history[i];
 
         ul.append('<li>' +
-            '<span class="shoutbox-username">' + msg.sender +': '+ '</span>' +
+            '<span class="shoutbox-username" style="font-size: 22px; color:#a64dff">' + msg.sender +': '+ '</span>' +
 
-            '<span class="shoutbox-username">' + msg.message + '</span>' +
+            '<span class="shoutbox-username" style="font-size: 22px">' + msg.message + '</span>' +
 
 
             '</li>');

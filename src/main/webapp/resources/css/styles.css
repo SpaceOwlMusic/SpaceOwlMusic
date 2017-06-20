@@ -54,7 +54,7 @@ h1 img {
     width: 100%;
     margin: 0;
     padding: 0;
-    color:  #df377a;
+    color: #ffffff;
     font-size: 14px;
     font-weight: 700;
     text-align: left;
@@ -67,8 +67,9 @@ h1 img {
 
 .shoutbox-username {
     display: inline;
-    color:  #df377a;
-    font-size: 14px;
+    color: #ffffff;
+    font-size: 16px;
+    font-family: 'Russo One', sans-serif;
     font-weight: bold;
     text-align: left;
     margin-right: 5px;
@@ -92,7 +93,7 @@ h1 img {
 .shoutbox-comment-reply {
     display: inline-block;
     float: left;
-    color:  #b366ff;
+    color:  #a64dff;
     font-size: 12px;
     font-weight: bold;
     line-height: 20px;
@@ -123,7 +124,7 @@ h2 {
     height: 45px;
     margin: 0;
     text-align: center;
-    color:  #df377a;
+    color:  #a64dff;
     font-size: 18px;
     font-weight: bold;
     line-height: 45px;
@@ -140,13 +141,13 @@ h2 span {
     top: 0;
     width: 20px;
     height: 20px;
-    z-index: 20px;
+    z-index: 20;
     font-family: 'Russo One', sans-serif;
 }
 
 .shoutbox-form form {
     display: none;
-    background-color:  #b366ff;
+    background-color:  #121113;
     box-shadow: 0px 2px 0px 0.00px #e2e8eb;
     max-width: 100%;
     text-align: left;
@@ -156,7 +157,7 @@ h2 span {
 
 .shoutbox-form form label {
     display: inline-block;
-    color:  #df377a;
+    color:  #a64dff;
     font-size: 14px;
     font-weight: 700;
     text-align: left;
@@ -208,13 +209,13 @@ h2 span {
 }
 
 .shoutbox-form form input[type=submit] {
-    background-color:  #b366ff;
+    background-color:  #020a0e;
     border: 1px solid #e6e7e8;
     box-shadow: 0px 1px 2px 0.00px rgba(0, 0, 0, 0.1);
     width: 110px;
     height: 41px;
     color: #ffffff;
-    font-size: 14px;
+    font-size: 25px;
     font-weight: bold;
     text-align: center;
     line-height: 38px;
