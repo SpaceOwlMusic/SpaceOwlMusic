@@ -48,7 +48,7 @@
         <form >
             <label class="shoutbox-comment-label" for="shoutbox-comment">Message </label> <textarea
                 id="shoutbox-comment" name="comment" maxlength='240'></textarea>
-            <input type="submit" value="Shout!"/>
+            <input type="submit" value="Send"/>
         </form>
     </div>
 

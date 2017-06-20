@@ -48,6 +48,18 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles;
 
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "friend", joinColumns = @JoinColumn(name = "id_user"),
+            inverseJoinColumns = @JoinColumn(name = "id_friend"))
+    private Set<User> friends;
+
+    public Set<User> getFriends() {
+        return friends;
+    }
+
+    public void setFriends(Set<User> friends) {
+        this.friends = friends;
+    }
 
     public String getRelationship() {
         return relationship;

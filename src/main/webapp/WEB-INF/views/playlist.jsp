@@ -37,11 +37,9 @@
             <section id="nameplaylist">
                 <img id="baseimgplaylist" src="${contextPath}/resources/img/owlchat.png">
                 <div>
-                    <<h2>Name playlist: ${sound.title}</h2>
+                    <h2>Name playlist: ${sound.title}</h2>
                     <h2>Owner:${sound.profile.user.firstName} ${sound.profile.user.lastName}</h2>
 
-                    <a href="#"> <img  src="${contextPath}/resources/img/pencil.png"></a>
-                    <a href="#">  <img  src="${contextPath}/resources/img/delete.png"></a>
                 </div>
             </section>
             <section id="addtracks">
@@ -51,8 +49,7 @@
                     <input id="secretValue" name="id_dialog" type="hidden" value="${sound.id}"/>
                     <button id="uploadphoto" type="button">Upload</button>
                 </form>
-                <a href="#"> <img  src="${contextPath}/resources/img/pencil.png"></a>
-                <a href="#">  <img  src="${contextPath}/resources/img/delete.png"></a>
+
                 </form>
             </section>
 

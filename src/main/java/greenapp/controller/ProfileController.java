@@ -46,11 +46,6 @@ public class ProfileController {
     }
 
 
-    @RequestMapping(value = "/app/test", method = RequestMethod.GET)
-    public String test(Model model) {
-
-        return "chat";
-    }
 
     //отримавши id діалога шукаємо поле із своїм id
     @RequestMapping(value = "/dialog", method = RequestMethod.GET)

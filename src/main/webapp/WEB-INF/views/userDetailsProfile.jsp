@@ -34,7 +34,6 @@
     <div id="content">
         <div class="userpage">
             <section class="userinfo">
-                <!--<div class="userfotka">-->
                 <div>
                     <span style="margin: auto;text-align: center"><h3>${user.firstName} ${user.lastName} </h3></span>
                     <div class="img-circle" id="imgContainer">
@@ -42,8 +41,8 @@
                              src="data:${user.profile.avatar.mapperImage.contenttype};base64,${user.profile.avatar.mapperImage.base64}">
 
                     </div>
-                        <form method="GET" action="${contextPath}/dialog">
-                        <button id="people-send-message" type="submit" value="send message">Send message</button>>
+                        <form method="GET" action="${contextPath}/dialog" id="sendForm">
+                        <button id="people-send-message" type="submit" value="send message">Send message</button>
                         <input type="hidden" value="${user.id}" name="id">
                     </form>
 
