@@ -32,7 +32,7 @@
     </style>
 </head>
 <body>
-<div id="pagewrap">
+<div id="pagewrap" style="padding-bottom: 50%">
     <!--<ХЕДЕР=================================================================================================>-->
     <header id="header">
         <jsp:include page="/WEB-INF/views/header.jsp"/>

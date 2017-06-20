@@ -32,7 +32,7 @@
     </style>
 </head>
 <body>
-<div id="pagewrap">
+<div id="pagewrap" style="padding-bottom: 50%">
     <!--<ХЕДЕР=================================================================================================>-->
     <header id="header">
            <jsp:include page="/WEB-INF/views/header.jsp"/>
@@ -40,6 +40,9 @@
 
 
     <div id="content" class="container people">
+        <c:if test="${dialog.size() ==0}">
+            <span style="color: #FFFFFF">Dialogs not found</span>
+        </c:if>
         <c:forEach items="${dialog}" var="map">
             <c:set var="user" value="${map.userSecond}" />
             <c:if test="${user.username == pageContext.request.userPrincipal.name}">
