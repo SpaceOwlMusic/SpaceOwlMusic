@@ -3,9 +3,15 @@
  */
 
 function callFirstBlock() {
-    alert("click");
-    var e=$('input.gender[type="checkbox"]:checked', this).val();
-    console.log("map: "+e);
+
+    var radioValue = $("input[name='gender']:checked").val();
+    if (radioValue) {
+        console.log("Your are a - " + radioValue);
+    }
+
+    var relation = $("#sel1 option:selected").text();
+    console.log("Your are a - " + relation);
+
 
     var map = {
         name: $("input[name='email']").val(),
@@ -14,7 +20,7 @@ function callFirstBlock() {
         gender: $("input[name='gender']").val(),
 
     };
-    console.log("map: "+map);
+    console.log("map: " + map);
     $.ajax({
         type: 'POST',
         url: 'http://localhost:8080/greenapp/api/settings/update_first_block',

@@ -230,8 +230,8 @@
                         <div class="imgplay">
                         </div>
                     </div>
-                    <audio  data-bpm="86">
-                        <source src="${contextPath}/resources/audio/elka.mp3">
+                    <audio  data-bpm="86" preload="none">
+                        <source src="http://localhost:8080/greenapp/api/sound/sound298">
                     </audio>
                 </div>
                 <a class="likes" href="#"><img src="${contextPath}/resources/img/shared_for_all/heart.png"> Like</a>
@@ -248,8 +248,8 @@
                         </div>
                     </div>
                     <a class="likes" href="#"><img src="${contextPath}/resources/img/shared_for_all/heart.png"> Like</a>
-                    <audio  data-bpm="86">
-                        <source src="${contextPath}/resources/audio/monatik.mp3">
+                    <audio  data-bpm="86" preload="none">
+                        <source src="http://localhost:8080/greenapp/api/sound/sound90">
                     </audio>
                 </div>
             </div>
@@ -266,8 +266,8 @@
                         </div>
                     </div>
                     <a class="likes" href="#"><img src="${contextPath}/resources/img/shared_for_all/heart.png"> Like</a>
-                    <audio  data-bpm="86">
-                        <source src="${contextPath}/resources/audio/track2.mp3">
+                    <audio  data-bpm="86" preload="none">
+                        <source src="http://localhost:8080/greenapp/api/sound/sound96">
                     </audio>
                 </div>
             </div>
@@ -284,8 +284,8 @@
                         </div>
                     </div>
                     <a class="likes" href="#"><img src="${contextPath}/resources/img/shared_for_all/heart.png"> Like</a>
-                    <audio  data-bpm="86">
-                        <source src="${contextPath}/resources/audio/track3.mp3">
+                    <audio  data-bpm="86" preload="none">
+                        <source src="http://localhost:8080/greenapp/api/sound/sound105">
                     </audio>
                 </div>
             </div>
@@ -302,8 +302,8 @@
                         </div>
                     </div>
                     <a class="likes" href="#"><img src="${contextPath}/resources/img/shared_for_all/heart.png"> Like</a>
-                    <audio  data-bpm="86">
-                        <source src="${contextPath}/resources/audio/track4.mp3">
+                    <audio  data-bpm="86" preload="none">
+                        <source src="http://localhost:8080/greenapp/api/sound/sound110">
                     </audio>
                 </div>
             </div>
@@ -320,8 +320,8 @@
                         </div>
                     </div>
                     <a class="likes" href="#"><img src="${contextPath}/resources/img/shared_for_all/heart.png"> Like</a>
-                    <audio  data-bpm="86">
-                        <source src="${contextPath}/resources/audio/track5.mp3">
+                    <audio  data-bpm="86" preload="none">
+                        <source src="http://localhost:8080/greenapp/api/sound/sound287">
                     </audio>
                 </div>
             </div>
@@ -338,8 +338,8 @@
                         </div>
                     </div>
                     <a class="likes" href="#"><img src="${contextPath}/resources/img/shared_for_all/heart.png"> Like</a>
-                    <audio  data-bpm="86">
-                        <source src="${contextPath}/resources/audio/track6.mp3">
+                    <audio  data-bpm="86" preload="none">
+                        <source src="http://localhost:8080/greenapp/api/sound/sound288">
                     </audio>
                 </div>
             </div>
@@ -356,8 +356,8 @@
                         </div>
                     </div>
                     <a class="likes" href="#"><img src="${contextPath}/resources/img/shared_for_all/heart.png"> Like</a>
-                    <audio  data-bpm="86">
-                        <source src="${contextPath}/resources/audio/track7.mp3">
+                    <audio  data-bpm="86" preload="none">
+                        <source src="http://localhost:8080/greenapp/api/sound/sound298">
                     </audio>
                 </div>
             </div>
@@ -373,7 +373,7 @@
                     <div class="caption">
                         <p>Playlist 1
                         </p>
-                        <p><a href="#" class="btn btn-primary" role="button">Listen now</a> </p>
+                        <p><a href="http://localhost:8080/greenapp/serdun/playlist/69" class="btn btn-primary" role="button">Listen now</a> </p>
                     </div>
                 </div>
             </div>
@@ -384,7 +384,7 @@
 
                         <p>Playlist 2
                         </p>
-                        <p><a href="#" class="btn btn-primary" role="button">Listen now</a> </p>
+                        <p><a href="http://localhost:8080/greenapp/serdun/playlist/71" class="btn btn-primary" role="button">Listen now</a> </p>
                     </div>
                 </div>
             </div>
@@ -394,7 +394,7 @@
                     <div class="caption">
                         <p>Playlist 3
                         </p>
-                        <p><a href="#" class="btn btn-primary" role="button">Listen now</a> </p>
+                        <p><a href="http://localhost:8080/greenapp/serdun/playlist/72" class="btn btn-primary" role="button">Listen now</a> </p>
                     </div>
                 </div>
             </div>
@@ -404,7 +404,7 @@
                     <div class="caption">
                         <p>Playlist 4
                         </p>
-                        <p><a href="#" class="btn btn-primary" role="button">Listen now</a> </p>
+                        <p><a href="http://localhost:8080/greenapp/serdun/playlist/73" class="btn btn-primary" role="button">Listen now</a> </p>
                     </div>
                 </div>
             </div>
@@ -414,7 +414,7 @@
                     <div class="caption">
                         <p>Playlist 5
                         </p>
-                        <p><a href="#" class="btn btn-primary" role="button">Listen now</a></p>
+                        <p><a href="http://localhost:8080/greenapp/serdun/playlist/74" class="btn btn-primary" role="button">Listen now</a></p>
                     </div>
                 </div>
             </div>
@@ -424,7 +424,7 @@
                     <div class="caption">
                         <p>Playlist 6
                         </p>
-                        <p><a href="#" class="btn btn-primary" role="button">Listen now</a></p>
+                        <p><a href="http://localhost:8080/greenapp/serdun/playlist/75" class="btn btn-primary" role="button">Listen now</a></p>
                     </div>
                 </div>
             </div>

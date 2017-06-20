@@ -20,7 +20,7 @@
 <header>
 <hgroup class="logoname">
     <img src="${contextPath}/resources/img/logoowl.png">
-    <h1><a href="#">SpaceOwl Music</a></h1>
+    <h1><a href="#">SpaceOwlMusic</a></h1>
     <img id="imglogout" src="${contextPath}/resources/img/exit.png">
     <c:if test="${pageContext.request.userPrincipal.name != null}">
         <a id="logout" onclick="document.forms['logoutForm'].submit()"> Logout</a></c:if>
