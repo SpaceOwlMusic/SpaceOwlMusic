@@ -66,6 +66,7 @@ public class ProfileController {
         return "chat";
     }
 
+
 //    //отримавши id діалога шукаємо поле із своїм id
 //    @RequestMapping(value = "/dialog/history/{id}", method = RequestMethod.GET)
 //    public String openHistory(Model model, @PathVariable(value = "id") String id, HttpServletRequest request) {

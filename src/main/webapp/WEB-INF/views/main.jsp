@@ -42,21 +42,23 @@
                 <li class="active"><a href="#">Home</a></li>
                 <li><a href="#block-about-us">About us</a></li>
                 <li><a href="#topmusic">Top Songs</a></li>
-                <li><a href="#">People</a></li>
+                <li><a href="${contextPath}/people">People</a></li>
             </ul>
             <!-- Поиск по сайту -->
-            <form role="search" class="navbar-form navbar-left">
+           <%-- <form role="search" class="navbar-form navbar-left">
                 <div class="form-group col-md-12">
                     <input type="text" placeholder="Search" class="form-control">
                 </div>
-            </form>
+            </form>--%>
             <ul class="nav navbar-nav navbar-right">
                 <li><button id="signlogin">
                     <span class="menu_link-text"> Sign in/Sign up</span>
                 </button></li>
-                <li><button id="profile">
-                    <span class="menu_link-text" href="${contextPath}/${userForm.username}">Profile</span>
-                </button></li>
+                <li><a href="${contextPath}/${pageContext.request.userPrincipal.name}">
+                    <button id="profile">
+                    <span class="menu_link-text">Profile</span>
+                </button>
+                </a></li>
             </ul>
         </div>
     </nav>
@@ -131,12 +133,12 @@
                                                 placeholder="Your username"></form:input>
                                 </div>
                                 <div class="field-wrap">
-                                    <form:input name="password" type="text" path="password" class="form-control"
+                                    <form:input name="password" type="password" path="password" class="form-control"
                                                 placeholder="Your password"></form:input>
                                 </div>
                                 <div class="field-wrap">
 
-                                    <form:input name="password" type="text" path="confirmPassword" class="form-control"
+                                    <form:input name="password" type="password" path="confirmPassword" class="form-control"
                                                 placeholder="Repeat Password"></form:input></div>
 
                                 <button id="submitsignup" type="submit" class="button button-block"/>

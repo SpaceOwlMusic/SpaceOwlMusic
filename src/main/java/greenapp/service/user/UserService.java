@@ -20,5 +20,6 @@ public interface UserService {
 
     boolean isAuth();
 
+    void addFriend(Long friendId);
 
 }

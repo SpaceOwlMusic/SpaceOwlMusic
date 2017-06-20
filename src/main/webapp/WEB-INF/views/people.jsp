@@ -52,8 +52,9 @@
                         <a href="${contextPath}/${map.username}">${map.firstName} ${map.lastName}</a>
                     </div >
                         <div class="col-md-3 col-sm-3 people-container">
-                        <form >
+                        <form>
                             <button type="submit" id="add-friend" value="add in friend">Add to friend</button>
+                            <input type="hidden" value="${map.id}" name="id">
                         </form>
                         </div>
                 </div>

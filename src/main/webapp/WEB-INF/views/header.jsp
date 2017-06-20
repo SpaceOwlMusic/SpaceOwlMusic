@@ -7,7 +7,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<>
 <head>
     <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
     <link rel="stylesheet" href="${contextPath}/resources/bootstrap/css/bootstrap.min.css">
@@ -30,8 +29,7 @@
         <li><a href="${contextPath}/"><img src="${contextPath}/resources/img/home.png">Home</a></li>
         <li><a href="${contextPath}/${pageContext.request.userPrincipal.name}"><img src="${contextPath}/resources/img/profile.png">Profile</a></li>
         <li><a href="${contextPath}/people"><img src="${contextPath}/resources/img/team.png">People</a></li>
-        <li><a href="${contextPath}/profile/settings"><img src="${contextPath}/resources/img/music-player.png">Settings</a>
-        </li>
+        <li><a href="${contextPath}/profile/settings"><img src="${contextPath}/resources/img/music-player.png">Settings</a></li>
     </ul>
 </nav>
 </header>
